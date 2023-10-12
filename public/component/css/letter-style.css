@@ -1,0 +1,103 @@
+/*new
+table{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-header{
+    text-align: -webkit-left;
+    font-size: 70%;
+    width: fit-content;
+    font-weight: lighter;
+}*/
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+    line-height: 1.4;
+}
+body{
+    margin: 0em 1em;
+}
+
+header, .contact, .quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ref{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.col-label{
+    width: 250px;
+}
+
+.ref-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.ref-details .col-label{
+    width: 600px; 
+}
+
+.ref-details .col-data{
+    
+    font-weight: bold;
+}
+
+.ref-quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.ref-quantity .col-quantity{
+    width: 150px;
+}
+
+.ref-quantity .col-unit{
+    margin-left: 10px;
+}
+
+.alamat-syarikat{
+    margin: 30px 0px;
+}
+
+.contact label{
+    font-size: 14pt;
+    line-height: normal;
+}
+
+.quantity label{
+    font-size: 20pt;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
+    margin: 30px 0px;
+}
+
+footer{
+    position: absolute;
+    justify-content: center;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+footer hr{
+    margin: 0px;
+}
