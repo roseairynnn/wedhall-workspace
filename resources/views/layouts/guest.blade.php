@@ -16,31 +16,62 @@
 
         <!--stylesheet-->
         <style>
-            .main-container{
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-            }
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            display: flex;
+            flex-direction: column;
+        }
 
+        .container {
+            flex: 1;
+            display: flex;
+        }
+
+        .col-1 {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .col-2 {
+            flex: 1;
+            background-color: #000000;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+        }
         </style>
 
     </head>
     <body>
-        <div class="main-container">
-            <div>
-                <a href="/">
+
+        <div class="container">
+            <div class="col-1">
+                <div class="logo">
                     <img src="{{ asset('component/img/logo.png') }}" alt="">
-                </a>
+                </div>
+
+                <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+                    {{ $slot }}
+                </div>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+            <div class="col-2">
+                <h2>right Side</h2>
+                <p>This is the left side content.</p>
             </div>
-
-            <!--footer & link url js-->
-            @include('components.footer')
         </div>
+
     </body>
 </html>

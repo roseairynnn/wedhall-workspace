@@ -95,8 +95,6 @@
             <img class="photo" src="{{ asset('component/img/land-1.png') }}" alt="">
             <img class="photo" src="{{ asset('component/img/land-2.png') }}" alt="">
         </div>-->
-    
-        <!--footer & link url js-->
-        @include('components.footer')
+  
     </body>
 </html>
