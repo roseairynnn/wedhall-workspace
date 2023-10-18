@@ -51,6 +51,12 @@
             margin: 0 auto;
             width: 50%;
         }
+
+        .login-form{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
         </style>
 
     </head>
@@ -62,7 +68,7 @@
                     <img src="{{ asset('component/img/logo.png') }}" alt="">
                 </div>
 
-                <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+                <div class="login-form">
                     {{ $slot }}
                 </div>
             </div>
