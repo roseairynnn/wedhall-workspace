@@ -1,8 +1,6 @@
 <x-guest-layout>
-
     <div class="card mb-3">
         <div class="card-body">
-
             <div class="pt-4 pb-2">
                 <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
                 <p class="text-center small">Enter your email & password to login</p>
@@ -11,12 +9,12 @@
             <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')" />
 
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation">
                 @csrf
 
                 <div class="col-12">
                     <x-input-label :for="'email'" :value="__('Email')" class="form-label" />
-                    <div class="input-group has-validation">
+                    <div class="input-group has-validation" style="margin-bottom: .5rem;">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <x-text-input type="email" name="email" class="form-control" id="email" :value="old('email')" required autofocus autocomplete="email" />
                         <div class="invalid-feedback">Please enter your email.</div>
@@ -25,8 +23,10 @@
 
                 <div class="col-12">
                     <x-input-label :for="'password'" :value="__('Password')" class="form-label" />
-                    <x-text-input type="password" name="password" class="form-control" id="password" required autocomplete="current-password" />
-                    <div class="invalid-feedback">Please enter your password!</div>
+                    <div class="input-group has-validation">
+                        <x-text-input type="password" name="password" class="form-control" id="password" required autocomplete="current-password" />
+                        <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
                 </div>
 
                 <!-- Remember Me -->
@@ -46,13 +46,13 @@
                         </a>
                     @endif
 
-                    <x-primary-button class="btn btn-primary w-100">
+                    <x-primary-button class="btn btn-primary w-100" style="margin-bottom: .8rem;">
                         {{ __('Log in') }}
                     </x-primary-button>
                 </div>
                 
                 <div class="col-12">
-                    <p class="small mb-0">Don't have an account? <a href="pages-register.html">Create an account</a></p>
+                    <p class="small mb-0">Don't have an account? <a href="{{ url('register') }}">Create an account</a></p>
                 </div>
             </form>
         </div>
