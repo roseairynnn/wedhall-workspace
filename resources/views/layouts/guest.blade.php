@@ -14,70 +14,36 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!--stylesheet-->
-        <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        <!--link url head-->
+        @include('components.head')
 
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .container {
-            flex: 1;
-            display: flex;
-        }
-
-        .col-1 {
-            flex: 1;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-
-        .col-2 {
-            flex: 1;
-            background-color: #000000;
-            padding: 20px;
-            color: #ffffff;
-        }
-
-        .logo {
-            display: block;
-            margin: 0 auto;
-            width: 50%;
-        }
-
-        .login-form{
-            justify-content: center;
-            display: flex;
-            align-items: center;
-        }
-        </style>
+    
 
     </head>
     <body>
+    <main>
+      <div class="container">
+        <section>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-        <div class="container">
-            <div class="col-1">
-                <div class="logo">
+                <div class="d-flex justify-content-center py-4">
+                  <a href="index.html" class="logo d-flex align-items-center w-auto">
                     <img src="{{ asset('component/img/logo.png') }}" alt="">
+                    <span class="d-none d-lg-block">WedHall</span>
+                  </a>
                 </div>
+                <!-- End Logo -->
 
-                <div class="login-form">
+                <div class="">
                     {{ $slot }}
                 </div>
+              </div>
             </div>
-
-            <div class="col-2">
-                <h2>right Side</h2>
-                <p>This is the left side content.</p>
-            </div>
-        </div>
-
+          </div>
+        </section>
+      </div>  
+    </main>
     </body>
 </html>
