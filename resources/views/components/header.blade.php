@@ -49,8 +49,10 @@
                   @csrf
 
                   <x-dropdown-link :href="route('logout')"
-                          onclick="event.preventDefault();
-                                      this.closest('form').submit();">
+                    class="dropdown-item d-flex align-items-center"
+                    onclick="event.preventDefault();
+                      this.closest('form').submit();">
+                      <i class="bi bi-box-arrow-right"></i>
                       <span>{{ __('Log Out') }}</span>
                   </x-dropdown-link>
               </form>
