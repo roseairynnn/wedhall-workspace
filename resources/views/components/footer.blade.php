@@ -40,4 +40,4 @@
   <script src="{{ asset('component/vendor/php-email-form/validate.js') }}"></script>
   
   <!-- Template Main JS File -->
-  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('component/js/main.js') }}"></script>
