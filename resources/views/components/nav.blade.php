@@ -11,41 +11,27 @@
       </li>
       <!-- End Dashboard Nav -->
       
-      <!-- 
+      <!-- End Syarikat Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-building"></i><span>Syarikat</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bank"></i><span>Hall</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="senarai-syarikat.php">
-              <i class="bi bi-circle"></i><span>Senarai Syarikat</span>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Type of Hall</span>
             </a>
           </li>
+          <!-- End Type of Hall Nav -->
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Manage Hall</span>
+            </a>
+          </li>
+          <!-- End Manage Hall Nav -->
         </ul>
       </li>
-      End Syarikat Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="bi bi-bank"></i>
-            <span>Hall</span>
-          </a>
-      </li><!-- End Hall Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="bi bi-bank2"></i>
-            <span>Type of Hall</span>
-          </a>
-      </li><!-- End Type of Hall Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="bi bi-file-earmark-ruled"></i>
-            <span>Manage Hall</span>
-          </a>
-      </li><!-- End Manage Hall Nav -->
+      <!-- End Hall Nav -->
 
       <li class="nav-item">
           <a class="nav-link collapsed" href="#">
