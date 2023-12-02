@@ -22,6 +22,10 @@ Route::get('/reservation-report', function () {
     return view('reservation-report');
 })->name('reservation-report');
 
+Route::get('/typehall', function () {
+    return view('typehall');
+})->name('typehall');
+
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');

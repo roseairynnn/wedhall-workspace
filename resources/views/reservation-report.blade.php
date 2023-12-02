@@ -8,6 +8,17 @@
     <!--link url head-->
     @include('components.head')
 
+    <style>
+        #add-stesen{
+            margin: 0;
+            padding: 0;
+            width:50px;
+            height:50px;
+            bottom:40px;
+            right:40px;
+        }
+    </style>
+
 </head>
 <body>
     <!--header-->
@@ -62,17 +73,25 @@
                                         <td></td>
                                         <td></td>
                                         <td>
-                                            <!--view penolakan-->
+                                            <!--view report-->
                                             <a href="#">
                                                 <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                             </a>
+
+                                            <!--Update report-->
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
+                            
                             <div style="display: flex; justify-content: flex-end; padding: 0px 8px;">
                                 <a type="button" href="#" class="btn btn-dark">Export <i class="bi bi-download"></i></a>
+                                &nbsp; &nbsp;
+                                <button type="button" id="add-stesen" class="btn btn-primary" style="border-radius: 60%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-register">
+                                    <i class="bx bx-plus-medical"></i>
+                                </button>  
                             </div>
                         </div>
                     </div>
