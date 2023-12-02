@@ -161,7 +161,6 @@
                                     </form>
                                     <!-- End Register Hall Form -->
                                     </div>
-                                    
                                 </div>
                                 </div>
                             </div>
@@ -172,11 +171,11 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Reservation ID</th>
                                     <th scope="col">Customer Email</th>
                                     <th scope="col">Hall Type</th>
-                                    <th scope="col">Hall Number</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Time</th>
+                                    <th scope="col">Date | Time</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -193,7 +192,6 @@
                                             <a href="#">
                                                 <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                             </a>
-
                                             <!--Update report-->
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
                                         </td>
