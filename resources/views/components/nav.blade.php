@@ -34,7 +34,7 @@
       <!-- End Hall Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
             <i class="bi bi-calendar-week"></i>
             <span>Reservation History</span>
           </a>
