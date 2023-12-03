@@ -33,19 +33,30 @@
       </li>
       <!-- End Hall Nav -->
 
+      <!-- Start Company Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('company') }}">
+          <i class="bi bi-building"></i>
+          <span>Company</span>
+        </a>
+      </li>
+      <!-- End Company Nav -->
+
       <li class="nav-item">
           <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
             <i class="bi bi-calendar-week"></i>
             <span>Reservation History</span>
           </a>
-      </li><!-- End Reservation History Nav -->
+      </li>
+      <!-- End Reservation History Nav -->
 
       <li class="nav-item">
           <a class="nav-link collapsed" href="#">
             <i class="bi bi-shop"></i>
             <span>About Us</span>
           </a>
-      </li><!-- End About Us Nav -->
+      </li>
+      <!-- End About Us Nav -->
 
 
       
