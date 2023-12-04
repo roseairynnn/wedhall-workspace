@@ -4,16 +4,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    use HasFactory;
-
     protected $table = 'company';
-    protected $primaryKey = 'companyID';
-    public $timestamps = false; // If you don't want to use created_at and updated_at timestamps
+    protected $primaryKey = 'companyregistrationNo';
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
         'companyName',
@@ -21,6 +19,9 @@ class Company extends Model
         'companyNophone',
         'companyEmail',
         'companyAddress',
-        // Add other fields as needed
+    ];
+
+    protected $dates = [
+        'dateRegistered',
     ];
 }
