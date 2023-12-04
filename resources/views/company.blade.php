@@ -63,7 +63,8 @@
                                     <div class="modal-body">
 
                                     <!-- Register Company Form -->
-                                    <form class="row g-3" method="POST" action="#"> 
+                                    <form class="row g-3" method="POST" action="{{ route('register.company') }}"> 
+                                        @csrf
                                         <div class="col-12">
                                             <label for="companyname" class="form-label">Company Name</label>
                                             <input type="text" class="form-control" id="companyname" name="companyname" required>
