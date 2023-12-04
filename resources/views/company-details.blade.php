@@ -137,63 +137,65 @@
                                             <input type="number" class="form-control" id="paxcapacity" name="paxcapacity" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="services" class="form-label">Services:</label>
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Lighting System</legend>
-                                                <div class="col-sm-10" style="width: 40%">
+                                          <label for="services" class="form-label">Services:</label>
+                                          <fieldset class="row mb-3">
+                                              <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Lighting System</legend>
+                                              <div class="col-sm-10" style="width: 40%">
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
+                                                      <input class="form-check-input" type="radio" name="lightingRadios" id="lightingAvailable" value="Available" checked="">
+                                                      <label class="form-check-label" for="lightingAvailable">
+                                                          Available
+                                                      </label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
+                                                      <input class="form-check-input" type="radio" name="lightingRadios" id="lightingNotAvailable" value="Not Available">
+                                                      <label class="form-check-label" for="lightingNotAvailable">
+                                                          Not Available
+                                                      </label>
                                                   </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>
-                                        <div class="col-12">
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Sound System</legend>
-                                                <div class="col-sm-10" style="width: 40%">
+                                              </div>
+                                          </fieldset>                                            
+                                      </div>
+                                      
+                                      <div class="col-12">
+                                          <fieldset class="row mb-3">
+                                              <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Sound System</legend>
+                                              <div class="col-sm-10" style="width: 40%">
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
-                                                  </div>
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
-                                                  </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>  
-                                        <div class="col-12">
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Catering Services</legend>
-                                                <div class="col-sm-10" style="width: 40%">
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
+                                                      <input class="form-check-input" type="radio" name="soundRadios" id="soundAvailable" value="Available" checked="">
+                                                      <label class="form-check-label" for="soundAvailable">
+                                                          Available
+                                                      </label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
+                                                      <input class="form-check-input" type="radio" name="soundRadios" id="soundNotAvailable" value="Not Available">
+                                                      <label class="form-check-label" for="soundNotAvailable">
+                                                          Not Available
+                                                      </label>
                                                   </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>
+                                              </div>
+                                          </fieldset>                                            
+                                      </div>  
+                                      
+                                      <div class="col-12">
+                                          <fieldset class="row mb-3">
+                                              <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Catering Services</legend>
+                                              <div class="col-sm-10" style="width: 40%">
+                                                  <div class="form-check">
+                                                      <input class="form-check-input" type="radio" name="cateringRadios" id="cateringAvailable" value="Available" checked="">
+                                                      <label class="form-check-label" for="cateringAvailable">
+                                                          Available
+                                                      </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                      <input class="form-check-input" type="radio" name="cateringRadios" id="cateringNotAvailable" value="Not Available">
+                                                      <label class="form-check-label" for="cateringNotAvailable">
+                                                          Not Available
+                                                      </label>
+                                                  </div>
+                                              </div>
+                                          </fieldset>              
+                                      </div>                                      
                                         <div class="col-12">
                                             <label for="pricerange" class="form-label">Price Range</label>       
                                             <div class="input-group mb-3">
@@ -248,8 +250,8 @@
                                               <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                           </a>
 
-                                          <!--Update report-->
-                                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
+                                          <!--Update report
+                                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
                                         </td>
                                     </tr>
                                 </tbody>
