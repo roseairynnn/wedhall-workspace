@@ -39,7 +39,8 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::post('/register-company', [CompanyController::class, 'registerCompany'])->name('register.company');
+Route::get('/company', [CompanyController::class, 'showRegistrationForm'])->name('company');
+Route::post('/register-company', [CompanyController::class, 'register'])->name('register.company');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

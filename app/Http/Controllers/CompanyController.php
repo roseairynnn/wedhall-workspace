@@ -1,44 +1,37 @@
 <?php
 
-// app/Http/Controllers/YourController.php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-use App\Models\Company; // Replace with your Company model namespace
+use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    public function registerCompany(Request $request)
+    public function showRegistrationForm()
     {
-        // Validate the form data
+        return view('company');
+    }
+
+    // Handle company registration
+    public function register(Request $request)
+    {
+        //Validation (customize this based on your needs)
         $request->validate([
-            'companyname' => 'required|string',
-            'companyregistrationNo' => 'required|string|unique:company,companyregistrationNo',
-            'companynophone' => 'required|string',
-            'companyemail' => 'required|string|email',
-            'alt_1' => 'required|string',
-            'alt_2' => 'required|string',
-            'companyzip' => 'required|string',
-            'companycity' => 'required|string',
-            'companystate' => 'required|string',
+            'companyname' => 'required|string|max:255',
+            'companyregistrationNo' => 'required|string|max:255',
+            'companynophone' => 'required|string|max:255',
+            'companyemail' => 'required|string|email|max:255',
+            'companyaddress' => 'required|string',
+            'companyzip' => 'required|string|max:255',
+            'companycity' => 'required|string|max:255',
+            'companystate' => 'required|string|max:255',
         ]);
-        Log::info('Input Data:', $request->all());
-        
-        // Create a new Company instance
-        $company = new Company();
-        $company->companyname = $request->input('companyname');
-        $company->companyregistrationNo = $request->input('companyregistrationNo');
-        $company->companyNophone = $request->input('companynophone');
-        $company->companyEmail = $request->input('companyemail');
-        $company->companyAddress = $request->input('alt_1') . ', ' . $request->input('alt_2') . ', ' . $request->input('companyzip') . ', ' . $request->input('companycity') . ', ' . $request->input('companystate');
 
-        // Save the company to the database
-        $company->save();
-        Log::info('Company registered successfully!');
+        $companyData = $request->all();
 
-        // Redirect back or to a specific page
-        return redirect()->back()->with('success', 'Company registered successfully!');
+        // Create a new company record
+        Company::create($companyData);
+
+        return redirect()->route('company')->with('success', 'Company registered successfully!');
     }
 }

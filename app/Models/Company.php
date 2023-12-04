@@ -1,27 +1,22 @@
 <?php
 
-// app/Models/Company.php
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $table = 'company';
-    protected $primaryKey = 'companyregistrationNo';
-    public $incrementing = false;
-    protected $keyType = 'string';
+    use HasFactory;
 
     protected $fillable = [
         'companyname',
         'companyregistrationNo',
-        'companyNophone',
-        'companyEmail',
-        'companyAddress',
-    ];
-
-    protected $dates = [
-        'dateRegistered',
+        'companynophone',
+        'companyemail',
+        'companyaddress',
+        'companyzip',
+        'companycity',
+        'companystate',
     ];
 }

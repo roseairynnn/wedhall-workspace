@@ -81,16 +81,15 @@
                                             <label for="companyemail" class="form-label">Email/Fax</label>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                                <input type="text" class="form-control" placeholder="Company Email" aria-label="companyemail" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" id="companyemail" name="companyemail" placeholder="Company Email" aria-label="companyemail" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                         <!--Address-->
                                         <div class="col-12">
                                             <label for="companyaddress" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="alt_1" name="alt_1" required=""> <br>
-                                            <input type="text" class="form-control" id="alt_2" name="alt_2" required="">
+                                            <input type="text" class="form-control" id="companyaddress" name="companyaddress" required="">
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3" >
                                             <label for="companyzip" class="form-label">ZIP</label>
                                             <input type="text" class="form-control" id="companyzip" name="companyzip" required="">
                                         </div>
