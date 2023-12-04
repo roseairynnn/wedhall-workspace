@@ -68,7 +68,7 @@
                               </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="companynophone" class="col-sm-2 col-form-label">Telephone Number</label>
+                                <label for="companynophone" class="col-sm-2 col-form-label">Phone Number</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" id="companynophone" name="companynophone" value=": &nbsp; 012-9312234" style="border-style: none; background-color: #fff; border: none;" disabled="">
                                 </div>
@@ -102,119 +102,6 @@
                         </div>
                     </div>                        
                     <!-- End Company Details -->
-
-                    <!-- Start Hall Registration -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">Senarai No Rujukan Pengecualian</h5>
-            
-                            <!-- Vertically centered Modal Register Exemption-->
-                          <div class="modal fade" id="verticalycentered" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title">Daftar Pengecualian</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <!-- Daftar Exemption Form -->
-                                <form class="row g-3" action="includes/daftar-pengecualian.inc.php" method="post">
-                                    <div class="col-12">
-                                        <label for="namasyarikat" class="form-label">Nama Syarikat</label>
-                                        <input type="text" class="form-control" id="namasyarikat" name="namasyarikat" value="DAGANG SDN BHD" required="">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="robroc" class="form-label">ROB / ROC</label>
-                                        <input type="text" class="form-control" id="robroc" name="robroc" value="DG0001" required="">
-                                    </div>
-                                    <div>
-                                      <label for="noexemption" class="form-label">No Pengecualian MIDA</label>
-                                      <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <div class="col-md-2">
-                                          <input type="text" class="form-control" id="noexemption" name="no-mida1" maxlength="4" minlength="4">
-                                        </div>
-                                          <label>&nbsp;/&nbsp;</label>
-                                        <div class="col-md-2">
-                                          <input type="text" class="form-control" id="noexemption" name="no-mida2" maxlength="4" minlength="4">
-                                        </div>
-                                          <label>&nbsp;/&nbsp;</label>
-                                        <div class="col-md-3">
-                                          <input type="text" class="form-control" id="noexemption" name="no-mida3" maxlength="6" minlength="6">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="norefexemption" class="form-label">No Ruj. MIDA <span style="color: red;">* optional</span></label>
-                                        <input type="text" class="form-control" id="norefexemption" name="norefexemption">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="tempohkelulusan" class="form-label">Tempoh Kelulusan</label>
-                                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-                                          <div class="col-md-6">
-                                            <label class="form-label">Mula</label>
-                                            <input type="date" class="form-control" id="tarikh-mula" name="tarikh-mula" required="">
-                                          </div>
-                                          <div class="col-md-6">
-                                            <label class="form-label">Tamat</label>
-                                            <input type="date" class="form-control" id="tarikh-akhir" name="tarikh-akhir" required="">
-                                          </div>
-                                        </div>
-                                                  </div>
-                                                  <div class="col-12">
-                                                      <label for="status" class="form-label">Status</label>
-                                                      <div class="col-ms-10">
-                                          <select name="status" id="" class="form-control" aria-label="Default select example">
-                                            <option selected="">Choose Status</option>
-                                            <option value="EXPIRED">Expired</option>
-                                            <option value="ACTIVE">Active</option>
-                                          </select>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="col-12">
-                                      <label for="doksokongan" class="form-label">Dokumen Sokongan <span style="color: red;">*.pdf ONLY * optional</span></label>
-                                      <input class="form-control" type="file" id="doksokongan" name="doksokongan" accept="application/pdf">
-                                    </div> -->
-                                    <div class="modal-footer">
-                                        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                        <button type="submit" name="submit" class="btn btn-primary">Daftar</button>
-                                    </div>
-                                </form>
-                                <!--End Daftar Exemption Form -->
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Vertically centered Modal Register Exemption-->
-            
-                            <!-- Table with stripped rows -->
-                            <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns"><div class="dataTable-top"><div class="dataTable-dropdown"><label><select class="dataTable-selector"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select> entries per page</label></div><div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div></div><div class="dataTable-container"><table class="table datatable dataTable-table">
-                              <thead>
-                                <tr><th scope="col" data-sortable="" style="width: 8.97129%;"><a href="#" class="dataTable-sorter">#</a></th><th scope="col" data-sortable="" style="width: 75.9569%;"><a href="#" class="dataTable-sorter">No Ruj MIDA Pengecualian</a></th><th scope="col" data-sortable="" style="width: 31.6986%;"><a href="#" class="dataTable-sorter">Tarikh Diluluskan</a></th><th scope="col" data-sortable="" style="width: 31.6986%;"><a href="#" class="dataTable-sorter">Tempoh Diluluskan</a></th><th scope="col" data-sortable="" style="width: 27.512%;"><a href="#" class="dataTable-sorter">Status</a></th><th scope="col" data-sortable="" style="width: 32.8947%;"><a href="#" class="dataTable-sorter">Lampiran</a></th></tr>
-                              </thead>
-                              <tbody><tr><th scope="row">1</th><td><a href="pengecualian.php?id=CDE1/2022/000001">CDE1/2022/000001</a></td><td>
-                                    15/2/2022 - 15/2/2023                        </td><td>
-                                    1 tahun, 0 bulan, 0 hari                        </td><td>
-                                                                  <span class="badge bg-success">
-                                          <i class="bi bi-check-circle me-1"></i>&nbsp;Active
-                                        </span>
-                                                                
-                                    </td><td>No attachment.</td></tr><tr><th scope="row">2</th><td><a href="pengecualian.php?id=320/35300/030466/000062JPC2">320/35300/030466/000062JPC2</a></td><td>
-                                    17/2/2022 - 17/2/2023                        </td><td>
-                                    1 tahun, 0 bulan, 0 hari                        </td><td>
-                                                                  <span class="badge bg-success">
-                                          <i class="bi bi-check-circle me-1"></i>&nbsp;Active
-                                        </span>
-                                                                
-                                    </td><td>No attachment.</td></tr></tbody></table></div><div class="dataTable-bottom"><div class="dataTable-info">Showing 1 to 2 of 2 entries</div><nav class="dataTable-pagination"><ul class="dataTable-pagination-list"></ul></nav></div></div>
-                            <!-- End Table with stripped rows -->
-            
-                            <div style="display: flex; justify-content: flex-end; padding: 0px 8px;">
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered" style="margin-right: 10px;">Daftar Pengecualian
-                            </button></div>
-                        </div>
-                    </div>
-                    <!-- End Hall Registration -->
-
                     
                     <div class="card">
                         <div class="card-body">
@@ -237,7 +124,7 @@
                                             <input type="text" class="form-control" id="hallname" name="hallname" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="hallvenues" class="form-label">Hall Venues</label>
+                                            <label for="halltype" class="form-label">Hall Type</label>
                                             <select class="form-select" aria-label="Default select example">
                                               <option selected="">Select</option>
                                               <option value="Ballrooom">Ballrooom</option>
@@ -325,7 +212,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                            <button type="submit" class="btn btn-primary" name="submit">Register</button>
+                                            <button type="submit" class="btn btn-primary" name="submit">Add</button>
                                         </div>
                                     </form>
                                     <!-- End Register Hall Form -->
@@ -341,11 +228,10 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Customer Email</th>
+                                    <th scope="col">Hall ID</th>
+                                    <th scope="col">Hall Name</th>
                                     <th scope="col">Hall Type</th>
-                                    <th scope="col">Hall Number</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Time</th>
+                                    <th scope="col">Hall Capacity</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -356,15 +242,14 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
                                         <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
-                                            </a>
+                                          <!--view report-->
+                                          <a href="#">
+                                              <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                          </a>
 
-                                            <!--Update report-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
+                                          <!--Update report-->
+                                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
                                         </td>
                                     </tr>
                                 </tbody>

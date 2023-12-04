@@ -69,91 +69,57 @@
                                             <input type="text" class="form-control" id="companyname" name="companyname" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="hallvenues" class="form-label">Hall Venues</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                              <option selected="">Select</option>
-                                              <option value="Ballrooom">Ballrooom</option>
-                                              <option value="Glasshouse">Glasshouse</option>
-                                              <option value="Garden Halls">Garden Halls</option>
-                                            </select>
+                                            <label for="companyregistrationNo" class="form-label">Registration No</label>
+                                            <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="paxcapacity" class="form-label">Capacity</label>
-                                            <input type="number" class="form-control" id="paxcapacity" name="paxcapacity" required>
+                                            <label for="companynophone" class="form-label">Phone Number</label>
+                                            <input type="text" class="form-control" id="companynophone" name="companynophone" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="services" class="form-label">Services:</label>
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Lighting System</legend>
-                                                <div class="col-sm-10" style="width: 40%">
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
-                                                  </div>
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
-                                                  </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>
-                                        <div class="col-12">
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Sound System</legend>
-                                                <div class="col-sm-10" style="width: 40%">
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
-                                                  </div>
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
-                                                  </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>  
-                                        <div class="col-12">
-                                            <fieldset class="row mb-3">
-                                                <legend class="col-form-label col-sm-2 pt-0" style="width: 31%">Catering Services</legend>
-                                                <div class="col-sm-10" style="width: 40%">
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="available" value="Available" checked="">
-                                                    <label class="form-check-label" for="available">
-                                                      Available
-                                                    </label>
-                                                  </div>
-                                                  <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="notavailable" value="Not Available" checked="">
-                                                    <label class="form-check-label" for="notavailable">
-                                                      Not Available
-                                                    </label>
-                                                  </div>
-                                                </div>
-                                            </fieldset>                                            
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="pricerange" class="form-label">Price Range</label>       
+                                            <label for="companyemail" class="form-label">Email/Fax</label>
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" aria-label="Amount (to the nearest MYR)">
-                                                <span class="input-group-text">.00</span>
-                                            </div>  
+                                                <span class="input-group-text" id="basic-addon1">@</span>
+                                                <input type="text" class="form-control" placeholder="Company Email" aria-label="companyemail" aria-describedby="basic-addon1">
+                                            </div>
                                         </div>
+
+                                        <!--Address-->
                                         <div class="col-12">
-                                            <label for="description" class="form-label">Hall Description</label>    
-                                            <textarea class="form-control" style="height: 100px"></textarea>
+                                            <label for="companyaddress" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="alt_1" name="alt_1" required=""> <br>
+                                            <input type="text" class="form-control" id="alt_2" name="alt_2" required="">
                                         </div>
-                                        <div class="col-12">
-                                            <label for="fileupload" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                        <div class="col-md-3">
+                                            <label for="companyzip" class="form-label">ZIP</label>
+                                            <input type="text" class="form-control" id="companyzip" name="companyzip" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="companycity" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="companycity" name="companycity" required="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="companystate" class="form-label">State</label>
+                                            <select class="form-select" id="companystate" name="companystate" required="">
+                                                <!--State List -->
+                                                <option value=""></option>
+                                                <option value="Johor">Johor</option>
+                                                <option value="Kedah">Kedah</option>
+                                                <option value="Kelantan">Kelantan</option>
+                                                <option value="Melaka">Melaka</option>
+                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                <option value="Pahang">Pahang</option>
+                                                <option value="Perak">Perak</option>
+                                                <option value="Perlis">Perlis</option>
+                                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                                <option value="Selangor">Selangor</option>
+                                                <option value="Terangganu">Terangganu</option>
+                                                <option value="Sabah">Sabah</option>
+                                                <option value="Serawak">Serawak</option>
+                                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                            </select>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
@@ -206,6 +172,8 @@
                         </div>
                     </div>
                     <!-- End Register Company -->
+
+
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">List of Hall</h5>
