@@ -63,7 +63,7 @@
                                     <div class="modal-body">
 
                                     <!-- Register Company Form -->
-                                    <form class="row g-3" method="POST" action="./includes/daftar-stesen.inc.php"> 
+                                    <form class="row g-3" method="POST" action="#"> 
                                         <div class="col-12">
                                             <label for="companyname" class="form-label">Company Name</label>
                                             <input type="text" class="form-control" id="companyname" name="companyname" required>
@@ -83,7 +83,6 @@
                                                 <input type="text" class="form-control" placeholder="Company Email" aria-label="companyemail" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
-
                                         <!--Address-->
                                         <div class="col-12">
                                             <label for="companyaddress" class="form-label">Address</label>

@@ -6,7 +6,7 @@
                 <p class="text-center small">Enter your personal details to create account</p>
             </div>
 
-            <!-- REGISER FORM -->
+            <!-- REGISTER FORM -->
             <form method="POST" action="{{ route('register') }}" class="row g-3 needs-validation">
                 @csrf
 
