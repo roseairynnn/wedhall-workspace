@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company | Wedhall</title>
+    <title>Company Details | Wedhall</title>
 
     <!--link url head-->
     @include('components.head')
 
     <style>
-        #add-hall{
+        #add-hall {
             margin: 0;
             padding: 0;
-            width:50px;
-            height:50px;
-            bottom:40px;
-            right:40px;
+            width: 50px;
+            height: 50px;
+            bottom: 40px;
+            right: 40px;
         }
     </style>
 
@@ -33,12 +33,12 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1 id="dashboard">Company Details</h1>
+            <h1 id="dashboard">Company Details - {{ $company->companyname }}</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('company-details')}}">Company Details</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('company-details', ['id' => $company->id]) }}">Company Details</a></li>
                 </ol>
             </nav>
         </div>
@@ -52,58 +52,56 @@
                     <!-- Start Company Details -->
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">Company A</h5><!--Company Name fetch from database-->
+                            <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">{{ $company->companyname }}</h5>
             
-                          <!-- General Form Elements -->
-                          <form class="companydetails">
-                            <div class="row mb-3">
-                              <label for="companyname" class="col-sm-2 col-form-label">Company Name</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="companyname" name="companyname" value=": &nbsp; Company A" style="border-style: none; background-color: #fff; border: none;" disabled="">
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <label for="companyregistrationNo" class="col-sm-2 col-form-label">Registration No.</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" value=": &nbsp; DG0001" style="border-style: none; background-color: #fff; border: none;" disabled="">
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="companynophone" class="col-sm-2 col-form-label">Phone Number</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="companynophone" name="companynophone" value=": &nbsp; 012-9312234" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                            <!-- General Form Elements -->
+                            <form class="companydetails">
+                                <!-- Display other company details dynamically -->
+                                <!-- For example: Registration No, Phone Number, Email/Fax, Address, Date Registration, Staff Roster, etc. -->
+
+                                <div class="row mb-3">
+                                    <label for="companyname" class="col-sm-2 col-form-label">Company Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="companyname" name="companyname" value=": &nbsp; {{ $company->companyname }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="companyemail" class="col-sm-2 col-form-label">Email/Fax</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="companyemail" name="companyemail" value=": &nbsp; companya@gmail.com" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                <div class="row mb-3">
+                                    <label for="companyregistrationNo" class="col-sm-2 col-form-label">Registration No.</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" value=": &nbsp; {{ $company->companyregistrationNo }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                              <label for="companyaddress" class="col-sm-2 col-form-label">Address</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="companyaddress" name="companyaddress" value=": &nbsp; NO.14, JALAN TU 34,TAMAN TASEK UTAMA,4000,SHAH ALAM,MELAKA" style="border-style: none; background-color: #fff; border: none; height: 100%;" disabled="">
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <label for="companydatereg" class="col-sm-2 col-form-label">Date Registration</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="companydatereg" name="companydatereg" value=": &nbsp; 15/2/2022" style="border-style: none; background-color: #fff; border: none;" disabled="">
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <label for="staffroster" class="col-sm-2 col-form-label">Staff Roster</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="staffroster" name="staffroster" value=": &nbsp; ASHIKIN BINTI MARDZUKI" style="border-style: none; background-color: #fff; border: none;" disabled="">
-                              </div>
-                            </div>
-                          </form>
-                          <!-- End General Form Elements -->
+                                <div class="row mb-3">
+                                    <label for="companynophone" class="col-sm-2 col-form-label">Phone Number</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="companynophone" name="companynophone" value=": &nbsp; {{ $company->companynophone }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="companyemail" class="col-sm-2 col-form-label">Email/Fax</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="companyemail" name="companyemail" value=": &nbsp; {{ $company->companyemail }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                  <label for="companyaddress" class="col-sm-2 col-form-label">Address</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="companyaddress" name="companyaddress" value=": &nbsp; {{ $company->companyaddress }}" style="border-style: none; background-color: #fff; border: none; height: 100%;" disabled="">
+                                  </div>
+                                </div>
+                                <div class="row mb-3">
+                                  <label for="companydatereg" class="col-sm-2 col-form-label">Date Registration</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="companydatereg" name="companydatereg" value=": &nbsp; {{ $company->created_at }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                  </div>
+                                </div>
+                            </form>
+                            <!-- End General Form Elements -->
                         </div>
                     </div>                        
                     <!-- End Company Details -->
                     
+                    <!-- Start List of Hall & Hall Registration -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">List of Hall</h5>
@@ -271,6 +269,8 @@
                             </div>
                         </div>
                     </div>
+                    <!-- End List of Hall & Hall Registration -->
+
                 </div>
             </div>
         </section>

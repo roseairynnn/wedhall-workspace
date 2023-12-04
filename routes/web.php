@@ -39,8 +39,12 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/company', [CompanyController::class, 'showRegistrationForm'])->name('company');
+Route::get('/company', [CompanyController::class, 'showCompanies'])->name('company');
 Route::post('/register-company', [CompanyController::class, 'register'])->name('register.company');
+
+//FETCHING DATA FROM COMPANY REGISTRATION FORM (ROUTE)
+Route::get('/show-companies', [CompanyController::class, 'showCompanies'])->name('show.companies');
+Route::get('/company/{id}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -7,9 +7,16 @@ use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    public function showRegistrationForm()
-    {
-        return view('company');
+
+    //FETCHING DATA FROM COMPANY REGISTRATION FORM
+    public function showCompanies(){
+        $companies = Company::all();
+        return view('company', ['companies' => $companies]);
+    }
+
+    public function showCompanyDetails($id){
+        $company = Company::findOrFail($id);
+        return view('company-details', compact('company'));
     }
 
     // Handle company registration
@@ -25,6 +32,7 @@ class CompanyController extends Controller
             'companyzip' => 'required|string|max:255',
             'companycity' => 'required|string|max:255',
             'companystate' => 'required|string|max:255',
+            'created_at' => 'required|timestamp',
         ]);
 
         $companyData = $request->all();

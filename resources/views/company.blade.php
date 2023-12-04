@@ -145,18 +145,20 @@
                                 </tr>
                                 </thead>
                                 <tbody
+                                    @foreach($companies as $company)
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <th scope="row">{{ $company->id }}</th>
+                                        <td>{{ $company->companyname }}</td>                                        
+                                        <td>{{ $company->companyregistrationNo }}</td>
+                                        <td>{{ $company->created_at->format('Y-m-d') }}</td>
                                         <td>
-                                            <!--view company-->
-                                            <a href="{{ route('company-details')}}">
+                                            <!-- View company details -->
+                                            <a href="{{ route('company-details', ['id' => $company->id]) }}">
                                                 <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                             </a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
