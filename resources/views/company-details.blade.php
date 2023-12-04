@@ -33,11 +33,12 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1 id="dashboard">Company</h1>
+            <h1 id="dashboard">Company Details</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('company-details')}}">Company Details</a></li>
                 </ol>
             </nav>
         </div>
@@ -249,6 +250,9 @@
                                           <a href="#">
                                               <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                           </a>
+
+                                          <!--Delete Hall-->
+                                          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
 
                                           <!--Update report
                                           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
