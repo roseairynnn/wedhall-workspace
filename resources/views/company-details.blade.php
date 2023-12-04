@@ -86,7 +86,7 @@
                                 <div class="row mb-3">
                                   <label for="companyaddress" class="col-sm-2 col-form-label">Address</label>
                                   <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="companyaddress" name="companyaddress" value=": &nbsp; {{ $company->companyaddress }}" style="border-style: none; background-color: #fff; border: none; height: 100%;" disabled="">
+                                    <input type="text" class="form-control" id="companyaddress" name="companyaddress" value=": &nbsp; {{ implode(', ', [$company->companyaddress, $company->companyzip, $company->companycity, $company->companystate]) }}" style="border-style: none; background-color: #fff; border: none; height: 100%;" disabled="">
                                   </div>
                                 </div>
                                 <div class="row mb-3">

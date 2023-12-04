@@ -42,9 +42,14 @@ Route::get('/home', function () {
 Route::get('/company', [CompanyController::class, 'showCompanies'])->name('company');
 Route::post('/register-company', [CompanyController::class, 'register'])->name('register.company');
 
+
 //FETCHING DATA FROM COMPANY REGISTRATION FORM (ROUTE)
 Route::get('/show-companies', [CompanyController::class, 'showCompanies'])->name('show.companies');
 Route::get('/company/{id}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
+
+// baru tambah
+Route::get('/company/{id}/update', [CompanyController::class, 'showUpdateForm'])->name('company.updateForm');
+Route::post('/company/{id}/update', [CompanyController::class, 'companyUpdate'])->name('company.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
