@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="modal-body">
                                     <!-- Register Company Form -->
-                                    <form class="row g-3" method="POST" action="{{ route('register.company') }}"> 
+                                    <form class="row g-3" method="POST" action="{{ route('update.company', ['id' => $company->id]) }}"> 
                                         @csrf
                                         <div class="col-12">
                                             <label for="companyname" class="form-label">Company Name</label>

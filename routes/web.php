@@ -36,6 +36,7 @@ Route::post('/register-company', [CompanyController::class, 'register'])->name('
 //FETCHING DATA FROM COMPANY REGISTRATION FORM (ROUTE)
 Route::get('/show-companies', [CompanyController::class, 'showCompanies'])->name('show.companies');
 Route::get('/company/{id}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
+Route::post('/update-company/{id}', [CompanyController::class, 'updateCompany'])->name('update.company');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

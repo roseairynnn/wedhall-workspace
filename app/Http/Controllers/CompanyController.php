@@ -37,4 +37,27 @@ class CompanyController extends Controller
         Company::create($companyData);
         return redirect()->route('company')->with('success', 'Company registered successfully!');
     }
+
+    public function updateCompany(Request $request, $id)
+    {
+        // Validation (customize this based on your needs)
+        $request->validate([
+            'companyname' => 'required|string|max:255',
+            'companyregistrationNo' => 'required|string|max:255',
+            'companynophone' => 'required|string|max:255',
+            'companyemail' => 'required|string|email|max:255',
+            'companyaddress' => 'required|string',
+            'companyzip' => 'required|string|max:255',
+            'companycity' => 'required|string|max:255',
+            'companystate' => 'required|string|max:255',
+        ]);
+
+        // Find the company by ID
+        $company = Company::findOrFail($id);
+
+        // Update the company record
+        $company->update($request->all());
+
+        return redirect()->route('company-details', ['id' => $id])->with('success', 'Company details updated successfully!');
+    }
 }
