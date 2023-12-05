@@ -74,7 +74,7 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
                                             </a>
                                             <!--Update report-->
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
@@ -90,7 +90,7 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
                                             </a>
                                             <!--Update report-->
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
@@ -106,7 +106,7 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
                                             </a>
                                             <!--Update report-->
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
