@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Details | Wedhall</title>
-
-    <!--link url head-->
+     <!--link url head-->
     @include('components.head')
-
     <style>
         #add-hall {
             margin: 0;
@@ -18,14 +16,12 @@
             right: 40px;
         }
     </style>
-
 </head>
 <body>
     <!--header-->
     <div class="header-main">
         @include('components.header')
     </div>
-
     <!--sidebar nav-->
     <div class="sidebar-main">
         @include('components.nav')
@@ -34,26 +30,24 @@
     <main id="main" class="main">
         <div class="pagetitle">
             <h1 id="dashboard">Company Details - {{ $company->companyname }}</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('company-details', ['id' => $company->id]) }}">Company Details</a></li>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('company-details', ['id' => $company->id]) }}">Company Details</a></li>
                 </ol>
             </nav>
         </div>
         <!-- End Page Title -->
-
         <!-- Start Content -->
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">
-
                     <!-- Start Company Details -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">{{ $company->companyname }}</h5>
-            
+                              <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">{{ $company->companyname }}</h5>
+
                             <!-- General Form Elements -->
                             <form class="companydetails">
                                 <!-- Display other company details dynamically -->
@@ -68,19 +62,19 @@
                                 <div class="row mb-3">
                                     <label for="companyregistrationNo" class="col-sm-2 col-form-label">Registration No.</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" value=": &nbsp; {{ $company->companyregistrationNo }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                        <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" value=": &nbsp; {{ $company->companyregistrationNo }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="companynophone" class="col-sm-2 col-form-label">Phone Number</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="companynophone" name="companynophone" value=": &nbsp; {{ $company->companynophone }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                         <input type="text" class="form-control" id="companynophone" name="companynophone" value=": &nbsp; {{ $company->companynophone }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="companyemail" class="col-sm-2 col-form-label">Email/Fax</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="companyemail" name="companyemail" value=": &nbsp; {{ $company->companyemail }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
+                                        <input type="text" class="form-control" id="companyemail" name="companyemail" value=": &nbsp; {{ $company->companyemail }}" style="border-style: none; background-color: #fff; border: none;" disabled="">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -100,12 +94,11 @@
                         </div>
                     </div>                        
                     <!-- End Company Details -->
-                    
+
                     <!-- Start List of Hall & Hall Registration -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">List of Hall</h5>
-
                             <!-- Vertically centered Modal Register Hall-->
                             <div class="modal fade" id="verticalycentered-register" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
@@ -115,7 +108,6 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-
                                     <!-- Register Hall Form -->
                                     <form class="row g-3" method="POST" action="./includes/daftar-stesen.inc.php"> 
                                         <div class="col-12">
@@ -223,7 +215,6 @@
                                 </div>
                             </div>
                             <!-- End Vertically centered Modal Register Hall-->
-
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -248,10 +239,8 @@
                                           <a href="#">
                                               <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                           </a>
-
                                           <!--Delete Hall-->
                                           <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-
                                           <!--Update report
                                           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
                                         </td>
@@ -276,7 +265,6 @@
         </section>
         <!-- End Content -->
     </main>
-
     <!--footer & link url js-->
     @include('components.footer')
 </body>

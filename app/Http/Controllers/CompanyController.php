@@ -1,13 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Company;
 
 class CompanyController extends Controller
 {
-
     //FETCHING DATA FROM COMPANY REGISTRATION FORM
     public function showCompanies(){
         $companies = Company::all();
@@ -36,10 +33,8 @@ class CompanyController extends Controller
         ]);
 
         $companyData = $request->all();
-
         // Create a new company record
         Company::create($companyData);
-
         return redirect()->route('company')->with('success', 'Company registered successfully!');
     }
 }
