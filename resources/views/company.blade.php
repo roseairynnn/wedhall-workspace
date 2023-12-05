@@ -125,12 +125,13 @@
                                             <button type="submit" class="btn btn-primary" name="submit">Register</button>
                                         </div>
                                     </form>
-                                    <!-- End Register Company Form -->
+                                    <!-- End Register Hall Form -->
                                     </div>
                                     
                                 </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <!-- End Vertically centered Modal Register Company-->
 
                             <!-- Vertically centered Modal Update Company-->
@@ -223,6 +224,33 @@
                                                 </div>
                                             </div>
                                             <!-- End Update Company Modal -->
+=======
+                            <!-- End Vertically centered Modal Register Hall-->
+
+                            <!-- Table with stripped rows -->
+                            <table class="table datatable">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Registration No</th>
+                                    <th scope="col">Date Registered</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody
+                                    @foreach($companies as $company)
+                                    <tr>
+                                        <th scope="row">{{ $company->id }}</th>
+                                        <td>{{ $company->companyname }}</td>                                        
+                                        <td>{{ $company->companyregistrationNo }}</td>
+                                        <td>{{ $company->created_at->format('Y-m-d') }}</td>
+                                        <td>
+                                            <!-- View company details -->
+                                            <a href="{{ route('company-details', ['id' => $company->id]) }}">
+                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                            </a>
+>>>>>>> parent of fc04595 (debug update company)
                                         </td>
                                     </tr>
                                     @endforeach
@@ -240,6 +268,9 @@
                         </div>
                     </div>
                     <!-- End Register Company -->
+
+
+                    
                 </div>
             </div>
         </section>
