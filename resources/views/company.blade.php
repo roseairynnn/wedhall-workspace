@@ -186,6 +186,8 @@
                                                                         <div class="modal-body">
 
                                                                         <!-- Update Company Form -->
+                                                                        <form class="row g-3" method="POST" action="{{ route('company.update')}}"> 
+                                                                            @csrf
                                                                             <div class="col-12">
                                                                                 <label for="companyname" class="form-label">Company Name</label>
                                                                                 <input type="text" class="form-control" id="companyname" name="companyname" required>
@@ -256,6 +258,7 @@
                                                                     <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                                                                     <button type="submit" class="btn btn-primary" name="submit">Update</button>
                                                                 </div>
+                                                            </form>
                                                             <!-- End Update Company Form -->
                                                         </div>
                                                     </div>
