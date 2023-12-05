@@ -144,7 +144,7 @@
                                     <div class="modal-body">
 
                                     <!-- Update Company Form -->
-                                    <form class="row g-3" method="POST" action="{{ route('company.update')}}"> 
+                                    <form class="row g-3" method="POST" action=""> 
                                         @csrf
                                         <div class="col-12">
                                             <label for="companyname" class="form-label">Company Name</label>
@@ -233,12 +233,12 @@
                                         <td>{{ $company->created_at->format('Y-m-d') }}</td>
                                         <td>
                                             <!-- View company details -->
-                                            <a href="{{ route('company-details', ['id' => $company->id]) }}">
+                                            <a href="#">
                                                 <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
                                             </a>
 
                                             <!-- Edit company details -->
-                                            <a href="{{ route('company.updateForm', ['id' => $company->id]) }}">
+                                            <a href="#">
                                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
                                             </a>
                                         </td>
