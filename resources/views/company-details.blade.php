@@ -46,8 +46,87 @@
                     <!-- Start Company Details -->
                     <div class="card">
                         <div class="card-body">
-                              <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">{{ $company->companyname }}</h5>
+                            <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">{{ $company->companyname }}</h5>
 
+                            <!-- Vertically centered Modal Update Company-->
+                            <div class="modal fade" id="verticalycentered-register" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title">Update Company</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <!-- Register Company Form -->
+                                    <form class="row g-3" method="POST" action="{{ route('register.company') }}"> 
+                                        @csrf
+                                        <div class="col-12">
+                                            <label for="companyname" class="form-label">Company Name</label>
+                                            <input type="text" class="form-control" id="companyname" name="companyname" placeholder="{{ $company->companyname }}">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="companyregistrationNo" class="form-label">Registration No</label>
+                                            <input type="text" class="form-control" id="companyregistrationNo" name="companyregistrationNo" placeholder="{{ $company->companyregistrationNo }}">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="companynophone" class="form-label">Phone Number</label>
+                                            <input type="text" class="form-control" id="companynophone" name="companynophone" placeholder="{{ $company->companynophone }}" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="companyemail" class="form-label">Email/Fax</label>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">@</span>
+                                                <input type="text" class="form-control" id="companyemail" name="companyemail" placeholder="Company Email" aria-label="companyemail" aria-describedby="basic-addon1" placeholder="{{ $company->companyemail }}" >
+                                            </div>
+                                        </div>
+                                        <!--Address-->
+                                        <div class="col-12">
+                                            <label for="companyaddress" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="companyaddress" name="companyaddress" placeholder="{{ $company->companyaddress }}" required="">
+                                        </div>
+                                        <div class="col-md-3" >
+                                            <label for="companyzip" class="form-label">ZIP</label>
+                                            <input type="text" class="form-control" id="companyzip" name="companyzip" placeholder="{{ $company->companyzip }}" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="companycity" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="companycity" name="companycity" placeholder="{{ $company->companycity }}" required="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="companystate" class="form-label">State</label>
+                                            <select class="form-select" id="companystate" name="companystate" placeholder="{{ $company->companystate}}" required="">
+                                                <!--State List -->
+                                                <option value=""></option>
+                                                <option value="Johor">Johor</option>
+                                                <option value="Kedah">Kedah</option>
+                                                <option value="Kelantan">Kelantan</option>
+                                                <option value="Melaka">Melaka</option>
+                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                <option value="Pahang">Pahang</option>
+                                                <option value="Perak">Perak</option>
+                                                <option value="Perlis">Perlis</option>
+                                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                                <option value="Selangor">Selangor</option>
+                                                <option value="Terangganu">Terangganu</option>
+                                                <option value="Sabah">Sabah</option>
+                                                <option value="Serawak">Serawak</option>
+                                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                                            <button type="submit" class="btn btn-primary" name="submit">Update</button>
+                                        </div>
+                                    </form>
+                                    <!-- End Register Hall Form -->
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End Vertically centered Modal Update Company-->
                             <!-- General Form Elements -->
                             <form class="companydetails">
                                 <!-- Display other company details dynamically -->
@@ -91,6 +170,9 @@
                                 </div>
                             </form>
                             <!-- End General Form Elements -->
+
+                            <button class="btn btn-primary" id="update-company" type="submit" data-bs-toggle="modal" data-bs-target="#verticalycentered-register">Edit Company Details</button>
+                            
                         </div>
                     </div>                        
                     <!-- End Company Details -->
