@@ -20,10 +20,18 @@ class CreateCompaniesTable extends Migration
             $table->string('companystate');
             $table->timestamps();
         });
+
+        Schema::table('companies', function (Blueprint $table) {
+            $table->renameColumn('id', 'companyid');
+        });
     }
 
     public function down()
     {
         Schema::dropIfExists('companies');
+
+        Schema::table('companies', function (Blueprint $table) {
+            $table->renameColumn('companyid', 'id');
+        });
     }
 }
