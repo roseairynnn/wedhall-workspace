@@ -129,9 +129,6 @@
 
                             <!-- General Form Elements -->
                             <form class="companydetails">
-                                <!-- Display other company details dynamically -->
-                                <!-- For example: Registration No, Phone Number, Email/Fax, Address, Date Registration, Staff Roster, etc. -->
-
                                 <div class="row mb-3">
                                     <label for="companyname" class="col-sm-2 col-form-label">Company Name</label>
                                     <div class="col-sm-10">
