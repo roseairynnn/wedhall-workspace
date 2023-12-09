@@ -156,7 +156,7 @@
                             <div style="display: flex; justify-content: flex-end; padding: 0px 8px;">
                                 <a type="button" href="#" class="btn btn-dark">Export <i class="bi bi-download"></i></a>
                                 &nbsp; &nbsp;
-                                <button type="button" id="add-hall" class="btn btn-primary" style="border-radius: 60%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-register">
+                                <button type="button" id="add-company" class="btn btn-primary" style="border-radius: 60%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-register">
                                     <i class="bx bx-plus-medical"></i>
                                 </button>  
                             </div>
