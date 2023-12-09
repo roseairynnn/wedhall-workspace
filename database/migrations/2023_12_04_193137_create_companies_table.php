@@ -9,7 +9,7 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->companyid();
+            $table->bigIncrements('companyid'); // Use bigIncrements for auto-incrementing primary key
             $table->string('companyname');
             $table->string('companyregistrationNo');
             $table->string('companynophone');
@@ -20,18 +20,10 @@ class CreateCompaniesTable extends Migration
             $table->string('companystate');
             $table->timestamps();
         });
-
-        Schema::table('companies', function (Blueprint $table) {
-            $table->renameColumn('id', 'companyid');
-        });
     }
 
     public function down()
     {
         Schema::dropIfExists('companies');
-
-        Schema::table('companies', function (Blueprint $table) {
-            $table->renameColumn('companyid', 'id');
-        });
     }
 }
