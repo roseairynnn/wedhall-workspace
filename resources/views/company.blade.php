@@ -138,12 +138,12 @@
                                 <tbody
                                     @foreach($companies as $company)
                                     <tr>
-                                        <th scope="row">{{ $company->id }}</th>
+                                        <th scope="row">{{ $company->companyid }}</th>
                                         <td>{{ $company->companyname }}</td>                                        
                                         <td>{{ $company->companyregistrationNo }}</td>
                                         <td>{{ $company->created_at->format('Y-m-d') }}</td>
                                         <td> <!-- View company details -->
-                                            <a href="{{ route('company-details', ['id' => $company->id]) }}">
+                                            <a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">
                                                 <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                             </a>
                                         </td>

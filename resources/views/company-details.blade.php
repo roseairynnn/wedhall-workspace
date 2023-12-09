@@ -34,7 +34,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('company-details', ['id' => $company->id]) }}">Company Details</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">Company Details</a></li>
                 </ol>
             </nav>
         </div>
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="modal-body">
                                     <!-- Register Company Form -->
-                                    <form class="row g-3" method="POST" action="{{ route('update.company', ['id' => $company->id]) }}"> 
+                                    <form class="row g-3" method="POST" action="{{ route('update.company', ['companyid' => $company->companyid]) }}"> 
                                         @csrf
                                         <div class="col-12">
                                             <label for="companyname" class="form-label">Company Name</label>

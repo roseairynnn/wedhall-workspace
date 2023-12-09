@@ -9,7 +9,7 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
+            $table->companyid();
             $table->string('companyname');
             $table->string('companyregistrationNo');
             $table->string('companynophone');

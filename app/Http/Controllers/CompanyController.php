@@ -11,10 +11,12 @@ class CompanyController extends Controller
         return view('company', ['companies' => $companies]);
     }
 
-    public function showCompanyDetails($id){
-        $company = Company::findOrFail($id);
-        return view('company-details', compact('company'));
+    public function showCompanyDetails($companyid){
+    $company = Company::where('companyid', $companyid)->firstOrFail();
+    return view('company-details', compact('company'));
     }
+
+    
 
     // Handle company registration
     public function register(Request $request)
@@ -38,10 +40,10 @@ class CompanyController extends Controller
         return redirect()->route('company')->with('success', 'Company registered successfully!');
     }
 
-    public function updateCompany(Request $request, $id)
+    public function updateCompany(Request $request, $companyid)
     {
         // Find the company by ID
-        $company = Company::findOrFail($id);
+        $company = Company::findOrFail($companyid);
 
         // Validation (customize this based on your needs)
         $request->validate([
@@ -70,6 +72,6 @@ class CompanyController extends Controller
         // Update the company record
         $company->update($request->all());
 
-        return redirect()->route('company-details', ['id' => $id])->with('success', 'Company details updated successfully!');
+        return redirect()->route('company-details', ['companyid' => $companyid])->with('success', 'Company details updated successfully!');
     }
 }
