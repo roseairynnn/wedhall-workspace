@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="modal-body">
                                     <!-- Register Hall Form -->
-                                    <form class="row g-3" method="POST" action="{{ route('hall.add', ['id' => $company->companyid]) }}"> 
+                                    <form class="row g-3" method="POST" action="{{ route('hall.add', ['id' => $company->companyid]) }}" enctype="multipart/form-data"> 
                                         @csrf
                                         <div class="col-12">
                                             <label for="hallname" class="form-label">Hall Name</label>

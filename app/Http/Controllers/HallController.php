@@ -16,19 +16,20 @@ class HallController extends Controller
 
     public function add(Request $request, $companyId)
     {
-        /*  $request->validate([
+        $request->validate([
             'hallname' => 'required|string',
             'halltype' => 'required|string',
             'hallcapacity' => 'required|numeric',
+            'hallimage1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'hallimage2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'hallimage3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // Add other validation rules as needed
-        ]);*/
+        ]);
 
         // Create a new Hall instance
         $hall = new Hall([
-            // Add other hall attributes based on your form
-            'companyid' => $companyId, // Associate the hall with the company
-
-            'hallname' => $request->input('hallname'), 
+            'companyid' => $companyId,
+            'hallname' => $request->input('hallname'),
             'halladdress' => $request->input('halladdress'),
             'hallzip' => $request->input('hallzip'),
             'hallcity' => $request->input('hallcity'),
@@ -36,18 +37,26 @@ class HallController extends Controller
             'halldescription' => $request->input('halldescription'),
             'hallcapacity' => $request->input('hallcapacity'),
             'hallprice' => $request->input('hallprice'),
-            'hallimage1' => $request->input('hallimage1'),
-            'hallimage2' => $request->input('hallimage2'),
-            'hallimage3' => $request->input('hallimage3'),
             'hallstatus' => 'Available',
-            'halltype' => $request->input('halltype'), 
-       
+            'halltype' => $request->input('halltype'),
         ]);
 
         // Set boolean values based on checkboxes
         $hall->lightingsystem = $request->has('lightingsystem');
         $hall->audiovisualsystem = $request->has('audiovisualsystem');
         $hall->parkingfacilities = $request->has('parkingfacilities');
+
+        // Handle file uploads for hallimage1, hallimage2, and hallimage3
+        foreach (['hallimage1', 'hallimage2', 'hallimage3'] as $imageField) {
+            if ($request->hasFile($imageField)) {
+                $image = $request->file($imageField);
+                $imageName = time() . '_' . $imageField . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/hall_images', $imageName); // Adjust the path as needed
+
+                // Save $imageName to the corresponding column in the database
+                $hall->{$imageField} = $imageName;
+            }
+        }
 
         // Save the hall
         $hall->save();
