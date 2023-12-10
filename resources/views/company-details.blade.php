@@ -299,20 +299,19 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Hall ID</th>
                                     <th scope="col">Hall Name</th>
                                     <th scope="col">Hall Type</th>
                                     <th scope="col">Hall Capacity</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody
+                                <tbody>
+                                    @foreach($company->halls as $hall)
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <th scope="row">{{ $hall->hallid }}</th>
+                                        <td>{{ $hall->hallname }}</td>
+                                        <td>{{ $hall->halltype }}</td>
+                                        <td>{{ $hall->hallcapacity }}</td>
                                         <td>
                                           <!--view report-->
                                           <a href="#">
@@ -324,6 +323,7 @@
                                           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

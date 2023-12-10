@@ -21,4 +21,9 @@ class Company extends Model{
         'companycity',
         'companystate',
     ];
+
+    //this define the relationship between company and hall 1-M company has many halls  
+    public function halls(){
+        return $this->hasMany(Hall::class, 'companyid');
+    }
 }

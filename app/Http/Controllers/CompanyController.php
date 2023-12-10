@@ -11,10 +11,11 @@ class CompanyController extends Controller
         return view('company', ['companies' => $companies]);
     }
 
-    public function showCompanyDetails($companyid){
-    $company = Company::where('companyid', $companyid)->firstOrFail();
-    return view('company-details', compact('company'));
-    }
+    public function showCompanyDetails($companyid)
+{
+    $company = Company::with('halls')->findOrFail($companyid);
+    return view('company-details', ['company' => $company]);
+}
 
     
 

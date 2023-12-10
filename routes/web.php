@@ -34,12 +34,9 @@ Route::get('/home', function () {
 
 
 // Routes for adding halls
-Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])
-    ->name('hall.add.form');
-
-Route::post('/company/{id}/add-hall', [HallController::class, 'add'])
-    ->name('hall.add');
-
+Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])->name('hall.add.form');
+Route::post('/company/{id}/add-hall', [HallController::class, 'add'])->name('hall.add');
+//Route::get('/company/{id}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 
 Route::get('/company', [CompanyController::class, 'showCompanies'])->name('company');
 Route::post('/register-company', [CompanyController::class, 'register'])->name('register.company');
