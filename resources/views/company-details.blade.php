@@ -189,13 +189,14 @@
                                     <div class="modal-body">
                                     <!-- Register Hall Form -->
                                     <form class="row g-3" method="POST" action="{{ route('hall.add', ['id' => $company->companyid]) }}"> 
+                                        @csrf
                                         <div class="col-12">
                                             <label for="hallname" class="form-label">Hall Name</label>
                                             <input type="text" class="form-control" id="hallname" name="hallname" required>
                                         </div>
                                         <div class="col-12">
                                             <label for="halltype" class="form-label">Hall Type</label>
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" id="halltype" name="halltype">
                                               <option selected="">Select</option>
                                               <option value="Ballrooom">Ballrooom</option>
                                               <option value="Glasshouse">Glasshouse</option>
@@ -203,39 +204,83 @@
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="paxcapacity" class="form-label">Capacity</label>
-                                            <input type="number" class="form-control" id="paxcapacity" name="paxcapacity" required>
+                                            <label for="hallcapacity" class="form-label">Capacity</label>
+                                            <input type="number" class="form-control" id="hallcapacity" name="hallcapacity" required>
                                         </div>
                                         <div class="col-12">
                                             <label for="services" class="form-label">Services:</label>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="lighting" id="lighting">
-                                                <label class="form-check-label" for="lighting">Lighting System</label>
+                                                <input class="form-check-input" type="checkbox" name="lightingsystem" id="lightingsystem">
+                                                <label class="form-check-label" for="lightingsystem">Lighting System</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="sound" id="sound">
-                                                <label class="form-check-label" for="sound">Sound System</label>
+                                                <input class="form-check-input" type="checkbox" name="audiovisualsystem" id="audiovisualsystem">
+                                                <label class="form-check-label" for="audiovisualsystem">Audio Visual System</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="catering" id="catering">
-                                                <label class="form-check-label" for="catering">Catering Services</label>
+                                                <input class="form-check-input" type="checkbox" name="parkingfacilities" id="parkingfacilities">
+                                                <label class="form-check-label" for="parkingfacilities">Parking Facilities</label>
                                             </div>                                          
                                         </div>              
                                         <div class="col-12">
-                                            <label for="pricerange" class="form-label">Price Range</label>       
+                                            <label for="hallprice" class="form-label">Price Range</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" aria-label="Amount (to the nearest MYR)">
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice">
                                                 <span class="input-group-text">.00</span>
                                             </div>  
                                         </div>
                                         <div class="col-12">
-                                            <label for="description" class="form-label">Hall Description</label>    
-                                            <textarea class="form-control" style="height: 100px"></textarea>
+                                            <label for="halldescription" class="form-label">Hall Description</label>    
+                                            <textarea class="form-control" style="height: 100px" id="halldescription" name="halldescription"></textarea>
                                         </div>
                                         <div class="col-12">
-                                            <label for="fileupload" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                            <label for="hallimage1" class="form-label">Image Upload</label>
+                                            <input class="form-control" type="text" id="hallimage1" name="hallimage1">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="hallimage2" class="form-label">Image Upload</label>
+                                            <input class="form-control" type="text" id="hallimage2" name="hallimage2">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="hallimage3" class="form-label">Image Upload</label>
+                                            <input class="form-control" type="text" id="hallimage3" name="hallimage3">
+                                        </div>
+                                        <!--Address-->
+                                        <div class="col-12">
+                                            <label for="halladdress" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="halladdress" name="halladdress">
+                                        </div>
+                                        <div class="col-md-3" >
+                                            <label for="hallzip" class="form-label">ZIP</label>
+                                            <input type="text" class="form-control" id="hallzip" name="hallzip">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="hallcity" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="hallcity" name="hallcity">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="hallstate" class="form-label">State</label>
+                                            <select class="form-select" id="hallstate" name="hallstate" >
+                                                <!--State List -->
+                                                <option selected="">Select</option>
+                                                <option value="Johor">Johor</option>
+                                                <option value="Kedah">Kedah</option>
+                                                <option value="Kelantan">Kelantan</option>
+                                                <option value="Melaka">Melaka</option>
+                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                <option value="Pahang">Pahang</option>
+                                                <option value="Perak">Perak</option>
+                                                <option value="Perlis">Perlis</option>
+                                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                                <option value="Selangor">Selangor</option>
+                                                <option value="Terangganu">Terangganu</option>
+                                                <option value="Sabah">Sabah</option>
+                                                <option value="Sarawak">Sarawak</option>
+                                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                            </select>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>

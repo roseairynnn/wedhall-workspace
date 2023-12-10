@@ -16,21 +16,32 @@ class HallController extends Controller
 
     public function add(Request $request, $companyId)
     {
-        $request->validate([
+        /*  $request->validate([
             'hallname' => 'required|string',
             'halltype' => 'required|string',
-            'paxcapacity' => 'required|numeric',
+            'hallcapacity' => 'required|numeric',
             // Add other validation rules as needed
-        ]);
+        ]);*/
 
         // Create a new Hall instance
         $hall = new Hall([
-            'hallname' => $request->input('hallname'),
-            'halltype' => $request->input('halltype'),
-            'hallcapacity' => $request->input('paxcapacity'),
-            'halldescription' => $request->input('halldescription'),
             // Add other hall attributes based on your form
             'companyid' => $companyId, // Associate the hall with the company
+
+            'hallname' => $request->input('hallname'), 
+            'halladdress' => $request->input('halladdress'),
+            'hallzip' => $request->input('hallzip'),
+            'hallcity' => $request->input('hallcity'),
+            'hallstate' => $request->input('hallstate'),
+            'halldescription' => $request->input('halldescription'),
+            'hallcapacity' => $request->input('hallcapacity'),
+            'hallprice' => $request->input('hallprice'),
+            'hallimage1' => $request->input('hallimage1'),
+            'hallimage2' => $request->input('hallimage2'),
+            'hallimage3' => $request->input('hallimage3'),
+            'hallstatus' => 'Available',
+            'halltype' => $request->input('halltype'), 
+       
         ]);
 
         // Set boolean values based on checkboxes
@@ -41,7 +52,7 @@ class HallController extends Controller
         // Save the hall
         $hall->save();
 
-        return redirect()->route('company.details', ['companyid' => $companyId])
+        return redirect()->route('company-details', ['companyid' => $companyId])
             ->with('success', 'Hall added successfully');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\HallController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
