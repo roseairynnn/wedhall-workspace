@@ -8,11 +8,6 @@ use App\Models\Company;
 
 class HallController extends Controller
 {
-    public function showHalls(){
-        $halls = Hall::all();
-        return view('company-details', ['halls' => $halls]);
-    }
-
     public function showHallsDetails($hallid){
         $hall = Hall::where('hallid', $hallid)->firstOrFail();
         return view('hall.details', compact('hall'));

@@ -306,7 +306,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($company->halls as $hall)
+                                    @foreach($company->halls as $hall) 
                                     <tr>
                                         <th scope="row">{{ $hall->hallid }}</th>
                                         <td>{{ $hall->hallname }}</td>

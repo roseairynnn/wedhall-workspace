@@ -13,7 +13,7 @@ class CompanyController extends Controller
 
     public function showCompanyDetails($companyid)
 {
-    $company = Company::with('halls')->findOrFail($companyid);
+    $company = Company::with('halls')->findOrFail($companyid); //with::halls is (JOIN TABLE) used to fetch halls data from halls table
     return view('company-details', ['company' => $company]);
 }
 
