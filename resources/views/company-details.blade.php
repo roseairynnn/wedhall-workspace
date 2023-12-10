@@ -236,15 +236,15 @@
                                         </div>
                                         <div class="col-12">
                                             <label for="hallimage1" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="text" id="hallimage1" name="hallimage1">
+                                            <input class="form-control" type="file" id="hallimage1" name="hallimage1">
                                         </div>
                                         <div class="col-12">
                                             <label for="hallimage2" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="text" id="hallimage2" name="hallimage2">
+                                            <input class="form-control" type="file" id="hallimage2" name="hallimage2">
                                         </div>
                                         <div class="col-12">
                                             <label for="hallimage3" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="text" id="hallimage3" name="hallimage3">
+                                            <input class="form-control" type="file" id="hallimage3" name="hallimage3">
                                         </div>
                                         <!--Address-->
                                         <div class="col-12">
