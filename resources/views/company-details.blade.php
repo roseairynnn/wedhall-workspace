@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="modal-body">
                                     <!-- Register Hall Form -->
-                                    <form class="row g-3" method="POST" action="./includes/daftar-stesen.inc.php"> 
+                                    <form class="row g-3" method="POST" action="{{ route('hall.add', ['id' => $company->companyid]) }}"> 
                                         <div class="col-12">
                                             <label for="hallname" class="form-label">Hall Name</label>
                                             <input type="text" class="form-control" id="hallname" name="hallname" required>
