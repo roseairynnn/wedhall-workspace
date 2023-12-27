@@ -11,13 +11,10 @@ class CompanyController extends Controller
         return view('company', ['companies' => $companies]);
     }
 
-    public function showCompanyDetails($companyid)
-{
-    $company = Company::with('halls')->findOrFail($companyid); //with::halls is (JOIN TABLE) used to fetch halls data from halls table
-    return view('company-details', ['company' => $company]);
-}
-
-    
+    public function showCompanyDetails($companyid){
+        $company = Company::with('halls')->findOrFail($companyid); //with::halls is (JOIN TABLE) used to fetch halls data from halls table
+        return view('company-details', ['company' => $company]);
+    }
 
     // Handle company registration
     public function register(Request $request)
@@ -36,6 +33,7 @@ class CompanyController extends Controller
         ]);*/
 
         $companyData = $request->all();
+        
         // Create a new company record
         Company::create($companyData);
         return redirect()->route('company')->with('success', 'Company registered successfully!');

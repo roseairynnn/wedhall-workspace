@@ -13,8 +13,7 @@ class HallController extends Controller
         return view('hall.details', compact('hall'));
     }
 
-    public function showAddForm($companyId)
-    {
+    public function showAddForm($companyId){
         $company = Company::findOrFail($companyId);
         return view('halls.add', ['companyId' => $companyId, 'company' => $company]);
     }
