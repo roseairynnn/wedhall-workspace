@@ -11,36 +11,21 @@
       </li>
       <!-- End Dashboard Nav -->
       
-      <!-- End Syarikat Nav -->
+      <!-- Start Manage Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-bank"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('typehall') }}">
-              <i class="bi bi-circle"></i><span>Type of Hall</span>
+            <a href="{{ route('company') }}">
+              <i class="bi bi-circle"></i><span>Company</span>
             </a>
           </li>
-          <!-- End Type of Hall Nav -->
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Manage Hall</span>
-            </a>
-          </li>
-          <!-- End Manage Hall Nav -->
+          <!-- End Hall Nav -->
         </ul>
       </li>
-      <!-- End Hall Nav -->
-
-      <!-- Start Company Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('company') }}">
-          <i class="bi bi-building"></i>
-          <span>Company</span>
-        </a>
-      </li>
-      <!-- End Company Nav -->
+      <!-- End Manage Nav -->
 
       <li class="nav-item">
           <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
@@ -57,78 +42,6 @@
           </a>
       </li>
       <!-- End About Us Nav -->
-
-
-      
-      <!-- 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-folder-symlink"></i><span>Pindah Stesen</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="pindah-keluar.php">
-              <i class="bi bi-circle"></i><span>Keluar</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      End Pindah Stesen Nav -->
-
-      <!-- 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="laporan-syarikat.php">
-              <i class="bi bi-circle"></i><span>Laporan Syarikat yang Telah Berdaftar Pengecualian</span>
-            </a>
-          </li>
-          <li>
-            <a href="laporan-penolakan.php">
-              <i class="bi bi-circle"></i><span>Laporan Bulanan Penolakan</span>
-            </a>
-          </li>
-          <li>
-            <a href="laporan-pegawai.php">
-              <i class="bi bi-circle"></i><span>Laporan Bulanan Pegawai</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      End Laporan Nav -->
-
-      <!--
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>Pegawai</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="senarai-pegawai.php">
-              <i class="bi bi-circle"></i><span>Senarai Pegawai</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      End Pegawai Nav -->
-
-      <!--
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#stesen-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-pin-map"></i><span>Stesen</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="stesen-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="senarai-stesen.php">
-              <i class="bi bi-circle"></i><span>Senarai Stesen</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      End Stesen Nav -->
     </ul>
-
-  </aside><!-- End Sidebar-->
+  </aside>
+  <!-- End Sidebar-->
