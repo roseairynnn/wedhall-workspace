@@ -36,8 +36,14 @@
             <h1 id="dashboard">Type Hall</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="#home">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Type Hall</a></li>
+                  <li class="breadcrumb-item active"><a href="#home">Home</a></li>
+                  
+                </ol>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">Company Details</a></li>
+                  <li class="breadcrumb-item"><a href="#">Type Hall</a></li>
                 </ol>
             </nav>
         </div>

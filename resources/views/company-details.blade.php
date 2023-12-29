@@ -35,7 +35,7 @@
                         <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">Company Details</a></li>
-                     </ol>
+                    </ol>
             </nav>
         </div>
         <!-- End Page Title -->
