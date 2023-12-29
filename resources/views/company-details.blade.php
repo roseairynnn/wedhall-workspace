@@ -30,12 +30,12 @@
     <main id="main" class="main">
         <div class="pagetitle">
             <h1 id="dashboard">Company Details - {{ $company->companyname }}</h1>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">Company Details</a></li>
-                    </ol>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('company-details', ['companyid' => $company->companyid]) }}">Company Details</a></li>
+                </ol>
             </nav>
         </div>
         <!-- End Page Title -->
@@ -236,15 +236,9 @@
                                         </div>
                                         <div class="col-12">
                                             <label for="hallimage1" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="hallimage1" name="hallimage1">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="hallimage2" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="hallimage2" name="hallimage2">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="hallimage3" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="hallimage3" name="hallimage3">
+                                            <input class="form-control" type="file" id="hallimage1" name="hallimage1" style="margin-bottom: 10px;"> 
+                                            <input class="form-control" type="file" id="hallimage2" name="hallimage2" style="margin-bottom: 10px;">
+                                            <input class="form-control" type="file" id="hallimage3" name="hallimage3" style="margin-bottom: 10px;">
                                         </div>
                                         <!--Address-->
                                         <div class="col-12">

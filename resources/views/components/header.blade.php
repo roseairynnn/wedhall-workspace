@@ -5,7 +5,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
     <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{route ('home')}}" class="logo d-flex align-items-center">
         <img src="{{ asset('component/img/logo.png') }}" alt="">
         <div class="fw-bold">
           <div><span class="d-none d-lg-block" style="font-family: 'Rajdhani', sans-serif; font-size: 30pt;">WEDDING HALL</span></div>
