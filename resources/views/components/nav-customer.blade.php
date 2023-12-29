@@ -14,15 +14,15 @@
       <!-- Start Manage Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bank"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bank"></i><span>Hall</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('company') }}">
-              <i class="bi bi-circle"></i><span>Company</span>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Type of Hall</span>
             </a>
-            <a href="{{ route('typehall') }}">
-              <i class="bi bi-circle"></i><span>Halls</span>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Available Hall</span>
             </a>
           </li>
           <!-- End Hall Nav -->
@@ -31,18 +31,18 @@
       <!-- End Manage Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
-            <i class="bi bi-calendar-week"></i>
-            <span>Reservation History</span>
-          </a>
+        <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
+        <i class="bi bi-calendar-week"></i>
+        <span>Reservation History</span>
+        </a>
       </li>
       <!-- End Reservation History Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
-            <i class="bi bi-shop"></i>
-            <span>About Us</span>
-          </a>
+        <a class="nav-link collapsed" href="#">
+        <i class="bi bi-shop"></i>
+        <span>About Us</span>
+        </a>
       </li>
       <!-- End About Us Nav -->
     </ul>

@@ -17,7 +17,7 @@
 
     <!--sidebar nav-->
     <div class="sidebar-main">
-        @include('components.nav-customer')
+        @include('components.nav')
     </div>
 
     <!--main-->

@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Start Admin Parts
 Route::get('/company', function () {
     return view('company');
 })->name('company');
@@ -54,4 +55,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// End Admin Parts
+
+// Start Customer Parts
+
+
+// End Customer Parts
 require __DIR__.'/auth.php';
