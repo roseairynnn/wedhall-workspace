@@ -34,8 +34,15 @@ Route::get('/typehall', function () {
     return view('typehall');
 })->name('typehall');
 
+/* home route for admin page
 Route::get('/home', function () {
     return view('home');
+})->middleware(['auth', 'verified'])->name('home');
+*/
+
+// home route for customer page (home-customer.blade.php)
+Route::get('/home', function () {
+    return view('home-customer');
 })->middleware(['auth', 'verified'])->name('home');
 
 

@@ -17,7 +17,7 @@
 
     <!--sidebar nav-->
     <div class="sidebar-main">
-        @include('components.nav')
+        @include('components.nav-customer')
     </div>
 
     <!--main-->
@@ -35,122 +35,75 @@
         <!-- End Page Title -->
 
         <!-- Start Main Content -->
-        <section class="section dashboard">
-            <div class="row">
-      
-              <!-- Left side columns -->
-              <div class="col-lg-8">
-                <div class="row">
-      
-                  <!-- Sales Card -->
-                  <div class="col-xxl-4 col-md-6">
-                    <div class="card info-card sales-card">
-      
-                      <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <li class="dropdown-header text-start">
-                            <h6>Filter</h6>
-                          </li>
-      
-                          <li><a class="dropdown-item" href="#">Today</a></li>
-                          <li><a class="dropdown-item" href="#">This Month</a></li>
-                          <li><a class="dropdown-item" href="#">This Year</a></li>
-                        </ul>
-                      </div>
-      
-                      <div class="card-body">
-                        <h5 class="card-title">Sales <span>| Today</span></h5>
-      
-                        <div class="d-flex align-items-center">
-                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-cart"></i>
-                          </div>
-                          <div class="ps-3">
-                            <h6>-</h6>
-                            <span class="text-success small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
-      
-                          </div>
-                        </div>
-                      </div>
-      
-                    </div>
-                  </div><!-- End Sales Card -->
-      
-                  <!-- Revenue Card -->
-                  <div class="col-xxl-4 col-md-6">
-                    <div class="card info-card revenue-card">
-      
-                      <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <li class="dropdown-header text-start">
-                            <h6>Filter</h6>
-                          </li>
-      
-                          <li><a class="dropdown-item" href="#">Today</a></li>
-                          <li><a class="dropdown-item" href="#">This Month</a></li>
-                          <li><a class="dropdown-item" href="#">This Year</a></li>
-                        </ul>
-                      </div>
-      
-                      <div class="card-body">
-                        <h5 class="card-title">Revenue <span>| This Month</span></h5>
-      
-                        <div class="d-flex align-items-center">
-                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-currency-dollar"></i>
-                          </div>
-                          <div class="ps-3">
-                            <h6>$-</h6>
-                            <span class="text-success small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
-      
-                          </div>
-                        </div>
-                      </div>
-      
-                    </div>
-                  </div><!-- End Revenue Card -->
-      
-                  <!-- Customers Card -->
-                  <div class="col-xxl-4 col-xl-12">
-      
-                    <div class="card info-card customers-card">
-      
-                      <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <li class="dropdown-header text-start">
-                            <h6>Filter</h6>
-                          </li>
-      
-                          <li><a class="dropdown-item" href="#">Today</a></li>
-                          <li><a class="dropdown-item" href="#">This Month</a></li>
-                          <li><a class="dropdown-item" href="#">This Year</a></li>
-                        </ul>
-                      </div>
-      
-                      <div class="card-body">
-                        <h5 class="card-title">Customers <span>| This Year</span></h5>
-      
-                        <div class="d-flex align-items-center">
-                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-people"></i>
-                          </div>
-                          <div class="ps-3">
-                            <h6>-</h6>
-                            <span class="text-danger small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Customers Card -->
+        <section class="section">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center">Welcome to WedHall - Your Premier Wedding Hall Reservation System!</h5>
+              <p style="text-align: center">We are delighted to extend a warm welcome to you as you embark on a seamless journey through WedHall, 
+              your go-to destination for effortless and enchanting wedding hall reservations. 
+              At WedHall, we understand the significance of your special day and the importance of 
+              finding the perfect venue to create lasting memories.
+              
+              Our user-friendly platform is designed with you in mind, 
+              offering a curated selection of exquisite wedding halls and venues to suit every style and preference. 
+              Whether you envision a romantic garden ceremony, a sophisticated ballroom reception, 
+              or a trendy urban celebration, WedHall has the ideal setting waiting for you.</p>
+            </div>
+          </div>
+          <div class="row align-items-top">
+            <div class="col-lg-4">
+    
+              <!-- Card with an image on top -->
+              <div class="card">
+                <img src="{{asset('./component/img/normal-hall.jpeg')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card with an image on top</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
-              <!-- End Left side columns -->
+              <!-- End Card with an image on top -->
+            
             </div>
-          </section>
+
+            <div class="col-lg-4">
+
+              <!-- Card with an image on top -->
+              <div class="card">
+                <img src="{{asset('./component/img/normal-hall2.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card with an image on top</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <!-- End Card with an image on top -->
+            
+            </div>
+            
+            <div class="col-lg-4">
+    
+              <!-- Card with an image on top -->
+              <div class="card">
+                <img src="{{asset('./component/img/normal-hall3.jpeg')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card with an image on top</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <!-- End Card with an image on top -->
+    
+              <!-- Card with an image on bottom -->
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card with an image on bottom</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <img src="assets/img/card.jpg" class="card-img-bottom" alt="...">
+              </div><!-- End Card with an image on bottom -->
+    
+            </div>
+    
+          </div>
+        </section>
         <!-- End Main Content -->
     </main>
 
