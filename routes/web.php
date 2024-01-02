@@ -40,12 +40,6 @@ Route::get('/home', function () {
 })->middleware(['auth', 'verified'])->name('home');
 */
 
-// home route for customer page (home-customer.blade.php)
-Route::get('/home', function () {
-    return view('home-customer');
-})->middleware(['auth', 'verified'])->name('home');
-
-
 // Routes for adding halls
 Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])->name('hall.add.form');
 Route::post('/company/{id}/add-hall', [HallController::class, 'add'])->name('hall.add');
@@ -62,11 +56,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 // End Admin Parts
 
 // Start Customer Parts
+// home route for customer page (home-customer.blade.php)
+Route::get('/home', function () {
+    return view('home-customer');
+})->middleware(['auth', 'verified'])->name('home');
 
+//Routes for Profile
+Route::get('/profile-customer', function () {
+    return view('profile-customer');
+})->name('profile-customer');
 
 // End Customer Parts
 require __DIR__.'/auth.php';

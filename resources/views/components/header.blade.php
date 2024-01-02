@@ -34,7 +34,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="route('profile.edit')">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profile-customer') }}">
                 &nbsp;&nbsp;<i class="bi bi-person"></i>
                 {{ __('Profile') }} 
               </a>
