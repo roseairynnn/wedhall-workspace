@@ -39,7 +39,7 @@
       <!-- End Reservation History Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{ route('aboutus') }}">
         <i class="bi bi-shop"></i>
         <span>About Us</span>
         </a>

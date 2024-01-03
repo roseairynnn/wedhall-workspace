@@ -73,6 +73,12 @@ Route::get('/reservation-history-customer', function () {
 Route::get('/profile-customer', function () {
     return view('profile-customer');
 })->name('profile-customer');
+
+//Routes for About Us
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
 // End Customer Parts
 
 
