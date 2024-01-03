@@ -74,7 +74,7 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
                                             </a>
                                         </td>
                                     </tr>
@@ -88,7 +88,7 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
                                             </a>
                                         </td>
                                     </tr>
@@ -102,17 +102,13 @@
                                         <td>
                                             <!--view report-->
                                             <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
+                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
                                             </a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
-                            
-                            <div style="display: flex; justify-content: flex-end; padding: 0px 8px;">
-                                <a type="button" href="#" class="btn btn-dark">Export <i class="bi bi-download"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
