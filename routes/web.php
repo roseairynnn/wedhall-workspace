@@ -64,10 +64,16 @@ Route::get('/home', function () {
     return view('home-customer');
 })->middleware(['auth', 'verified'])->name('home');
 
+//Routes for Reservation History Customer
+Route::get('/reservation-history-customer', function () {
+    return view('reservation-history-customer');
+})->name('reservation-history-customer');
+
 //Routes for Profile
 Route::get('/profile-customer', function () {
     return view('profile-customer');
 })->name('profile-customer');
-
 // End Customer Parts
+
+
 require __DIR__.'/auth.php';

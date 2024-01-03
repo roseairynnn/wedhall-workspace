@@ -31,7 +31,7 @@
       <!-- End Manage Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('reservation-report') }}">
+        <a class="nav-link collapsed" href="{{ route('reservation-history-customer') }}">
         <i class="bi bi-calendar-week"></i>
         <span>Reservation History</span>
         </a>
