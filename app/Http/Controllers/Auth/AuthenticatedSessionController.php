@@ -38,6 +38,8 @@ class AuthenticatedSessionController extends Controller
         } elseif ($user->role === 'customer') {
             return redirect()->intended('/home-customer');
         }
+
+        return redirect()->intended('/home-customer');
     }
 
     /**
