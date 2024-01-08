@@ -56,18 +56,6 @@ class CompanyController extends Controller
             'companystate' => 'required|string|max:255',
         ]);
 
-
-        //fetch companyname from company table and update it
-        /* ? and : are ternary operators
-        $company->companyname = $request->filled('companyname') ? $request->input('companyname') : $company->companyname;
-        $company->companyregistrationNo = $request->filled('companyregistrationNo') ? $request->input('companyregistrationNo') : $company->companyregistrationNo;
-        $company->companynophone = $request->filled('companynophone') ? $request->input('companynophone') : $company->companynophone;
-        $company->companyemail = $request->filled('companyemail') ? $request->input('companyemail') : $company->companyemail;
-        $company->companyaddress = $request->filled('companyaddress') ? $request->input('companyaddress') : $company->companyaddress;
-        $company->companyzip = $request->filled('companyzip') ? $request->input('companyzip') : $company->companyzip;
-        $company->companycity = $request->filled('companycity') ? $request->input('companycity') : $company->companycity;
-        $company->companystate = $request->filled('companystate') ? $request->input('companystate') : $company->companystate;*/
-
         // Update the company record
         $company->update($request->all());
 

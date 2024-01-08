@@ -39,6 +39,7 @@
             </nav>
         </div>
         <!-- End Page Title -->
+        
         <!-- Start Content -->
         <section class="section">
             <div class="row">
@@ -121,6 +122,7 @@
                                         </div>
                                     </form>
                                     <!-- End Register Hall Form -->
+
                                     </div>
                                 </div>
                                 </div>
