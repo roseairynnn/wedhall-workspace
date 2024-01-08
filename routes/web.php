@@ -64,6 +64,11 @@ Route::get('/home', function () {
     return view('home-customer');
 })->middleware(['auth', 'verified'])->name('home');
 
+//Routes for Type of Hall Customer
+Route::get('/typehall-customer', function () {
+    return view('typehall-customer');
+})->name('typehall-customer');
+
 //Routes for Reservation History Customer
 Route::get('/reservation-history-customer', function () {
     return view('reservation-history-customer');
