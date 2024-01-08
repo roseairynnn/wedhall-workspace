@@ -18,6 +18,12 @@ Route::get('/', function () {
 });
 
 // Start Admin Parts
+
+// home route for admin page
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
+
 Route::get('/company', function () {
     return view('company');
 })->name('company');
@@ -34,11 +40,6 @@ Route::get('/typehall', function () {
     return view('typehall');
 })->name('typehall');
 
-/* home route for admin page
-Route::get('/home', function () {
-    return view('home');
-})->middleware(['auth', 'verified'])->name('home');
-*/
 
 // Routes for adding halls
 Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])->name('hall.add.form');
@@ -60,9 +61,9 @@ Route::middleware('auth')->group(function () {
 
 // Start Customer Parts
 // home route for customer page (home-customer.blade.php)
-Route::get('/home', function () {
+Route::get('/home-customer', function () {
     return view('home-customer');
-})->middleware(['auth', 'verified'])->name('home');
+})->middleware(['auth', 'verified'])->name('home-customer');
 
 //Routes for Type of Hall Customer
 Route::get('/typehall-customer', function () {
