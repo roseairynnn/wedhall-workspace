@@ -58,7 +58,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    <!-- Register Company Form -->
+                                    <!-- Update Company Form -->
                                     <form class="row g-3" method="POST" action="{{ route('update.company', ['companyid' => $company->companyid]) }}"> 
                                         @csrf
                                         <div class="col-12">

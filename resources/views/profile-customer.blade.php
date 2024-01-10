@@ -104,7 +104,7 @@
                         <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
 
                             <!-- Profile Edit Form -->
-                            <form method="POST" action="">
+                            <form method="POST" action="{{ route('profile.update') }}">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="photo" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
