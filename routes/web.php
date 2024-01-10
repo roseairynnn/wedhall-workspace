@@ -52,11 +52,18 @@ Route::post('/register-company', [CompanyController::class, 'register'])->name('
 Route::get('/company/{companyid}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
 Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCompany'])->name('update.company');
 
+/*
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+    Route::get('/profile-customer', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile-customer', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile-customer', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});*/
+
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+// Handle the profile update form submission
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
 // End Admin Parts
 
 // Start Customer Parts

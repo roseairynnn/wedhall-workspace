@@ -76,27 +76,27 @@
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                            <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                            <div class="col-lg-9 col-md-8">{{Auth::user() -> fullname}}</div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Username</div>
-                            <div class="col-lg-9 col-md-8">Lorem ipsum</div>
+                            <div class="col-lg-9 col-md-8"></div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Email</div>
-                            <div class="col-lg-9 col-md-8">email@mail.com</div>
+                            <div class="col-lg-9 col-md-8"></div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Phone</div>
-                            <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                            <div class="col-lg-9 col-md-8"></div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Address</div>
-                            <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                            <div class="col-lg-9 col-md-8"></div>
                             </div>
 
                         </div>
@@ -127,14 +127,14 @@
                                 <div class="row mb-3">
                                     <label for="username" class="col-md-4 col-lg-3 col-form-label">Username</label>
                                     <div class="col-md-8 col-lg-9">
-                                    <textarea name="username" class="form-control" id="username" style="height: 100px"></textarea>
+                                    <input name="username" type="text" class="form-control" id="username" value="" disabled>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                     <div class="col-md-8 col-lg-9">
-                                    <input name="email" type="email" class="form-control" id="email" value="">
+                                    <input name="email" type="email" class="form-control" id="email" value="" disabled>
                                     </div>
                                 </div>
 
