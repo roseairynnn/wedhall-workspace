@@ -37,16 +37,13 @@
         <section class="section profile">
             <div class="row">
                 <div class="col-xl-4">
-
                     <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                        <img src="#" alt="Profile" class="rounded-circle">
-                        <h2>Kevin Anderson</h2>
+                        <img src="{{ asset('storage/user_profile/'.auth()->user()->photo) }}"  class="rounded-circle">
+                        <h2 style="text-align: center">{{ auth()->user()->fullname }}</h2>
                         <h3>{{ auth()->user()->username }}</h3>
                     </div>
                     </div>
-
                 </div>
 
                 <div class="col-xl-8">
@@ -76,27 +73,27 @@
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                            <div class="col-lg-9 col-md-8">{{Auth::user() -> fullname}}</div>
+                            <div class="col-lg-9 col-md-8">{{ auth()->user()->fullname }}</div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Username</div>
-                            <div class="col-lg-9 col-md-8"></div>
+                            <div class="col-lg-9 col-md-8">{{ auth()->user()->username }}</div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Email</div>
-                            <div class="col-lg-9 col-md-8"></div>
+                            <div class="col-lg-9 col-md-8">{{ auth()->user()->email }}</div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Phone</div>
-                            <div class="col-lg-9 col-md-8"></div>
+                            <div class="col-lg-9 col-md-8">{{ auth()->user()->phone }}</div>
                             </div>
 
                             <div class="row">
                             <div class="col-lg-3 col-md-4 label">Address</div>
-                            <div class="col-lg-9 col-md-8"></div>
+                            <div class="col-lg-9 col-md-8">{{ auth()->user()->address }}</div>
                             </div>
 
                         </div>
@@ -104,15 +101,13 @@
                         <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
 
                             <!-- Profile Edit Form -->
-                            <form method="POST" action="{{ route('profile.update') }}">
+                            <form method="POST" enctype="multipart/form-data" action="{{ route('profile.update') }}">
                                 @csrf
                                 <div class="row mb-3">
                                     <label for="photo" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="#" alt="Profile">
                                         <div class="pt-2">
-                                            <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                            <input name="photo" type="file" class="form-control" id="photo" accept="image/*" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -120,21 +115,21 @@
                                 <div class="row mb-3">
                                     <label for="fullname" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                    <input name="fullName" type="text" class="form-control" id="fullName" value="">
+                                    <input name="fullname" type="text" class="form-control" id="fullname" value="">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="username" class="col-md-4 col-lg-3 col-form-label">Username</label>
                                     <div class="col-md-8 col-lg-9">
-                                    <input name="username" type="text" class="form-control" id="username" value="" disabled>
+                                    <input name="username" type="text" class="form-control" id="username" value="" >
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                     <div class="col-md-8 col-lg-9">
-                                    <input name="email" type="email" class="form-control" id="email" value="" disabled>
+                                    <input name="email" type="email" class="form-control" id="email" value="" >
                                     </div>
                                 </div>
 

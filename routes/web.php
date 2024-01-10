@@ -59,11 +59,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile-customer', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });*/
 
-Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-
-// Handle the profile update form submission
-Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-
+Route::middleware('auth')->group(function () {
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
 // End Admin Parts
 
 // Start Customer Parts

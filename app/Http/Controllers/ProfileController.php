@@ -19,8 +19,8 @@ class ProfileController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'fullName' => 'required|string|max:255',
-            'photo' => 'nullable|image|max:1024', // 1MB Max
+            'fullname' => 'required|string|max:255',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'username' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
@@ -36,6 +36,11 @@ class ProfileController extends Controller
 
         // Update the user's profile
         $user->updateProfile($request->all());
+
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('user_profile', 'public');
+            $user->photo = $photoPath;
+        }
 
         // Redirect back with a success message
         return redirect()->route('profile.edit')->with('success', 'Profile updated successfully');
