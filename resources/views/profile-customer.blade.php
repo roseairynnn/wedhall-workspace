@@ -39,7 +39,7 @@
                 <div class="col-xl-4">
                     <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="{{ asset('storage/user_profile/'.auth()->user()->photo) }}"  class="rounded-circle">
+                        <img src="{{ asset('storage/'.auth()->user()->photo) }}"  class="rounded-circle" >
                         <h2 style="text-align: center">{{ auth()->user()->fullname }}</h2>
                         <h3>{{ auth()->user()->username }}</h3>
                     </div>
