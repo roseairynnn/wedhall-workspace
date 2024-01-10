@@ -8,6 +8,15 @@
     <!--link url head-->
     @include('components.head')
 
+    <style>
+        .userprofile{
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+
 </head>
 <body>
     <!--header-->
@@ -38,10 +47,10 @@
             <div class="row">
                 <div class="col-xl-4">
                     <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="{{ asset('storage/'.auth()->user()->photo) }}"  class="rounded-circle" >
-                        <h2 style="text-align: center">{{ auth()->user()->fullname }}</h2>
-                        <h3>{{ auth()->user()->username }}</h3>
+                    <div class="card-body pt-4 d-flex flex-column align-items-center">
+                        <img src="{{ asset('storage/'.auth()->user()->photo) }}" class="userprofile mb-5">
+                        <h3 style="text-align: center">{{ auth()->user()->fullname }}</h3>
+                        <h4>@ {{ auth()->user()->username }}</h4>
                     </div>
                     </div>
                 </div>
