@@ -104,56 +104,94 @@
                         <div class="tab-pane fade profile-edit pt-3" id="profile-edit" role="tabpanel">
 
                             <!-- Profile Edit Form -->
-                            <form>
-                            <div class="row mb-3">
-                                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                                <div class="col-md-8 col-lg-9">
-                                <img src="#" alt="Profile">
-                                <div class="pt-2">
-                                    <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                                    <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                            <form method="POST" action="">
+                                @csrf
+                                <div class="row mb-3">
+                                    <label for="photo" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <img src="#" alt="Profile">
+                                        <div class="pt-2">
+                                            <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="fullname" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                                <div class="col-md-8 col-lg-9">
-                                <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                                <div class="row mb-3">
+                                    <label for="fullname" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="fullName" type="text" class="form-control" id="fullName" value="">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="username" class="col-md-4 col-lg-3 col-form-label">Username</label>
-                                <div class="col-md-8 col-lg-9">
-                                <textarea name="username" class="form-control" id="username" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
+                                <div class="row mb-3">
+                                    <label for="username" class="col-md-4 col-lg-3 col-form-label">Username</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <textarea name="username" class="form-control" id="username" style="height: 100px"></textarea>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                                <div class="col-md-8 col-lg-9">
-                                <input name="email" type="email" class="form-control" id="email" value="k.anderson@example.com">
+                                <div class="row mb-3">
+                                    <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="email" type="email" class="form-control" id="email" value="">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                <div class="col-md-8 col-lg-9">
-                                <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                                <div class="row mb-3">
+                                    <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="phone" type="text" class="form-control" id="Phone" value="">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-                                <div class="col-md-8 col-lg-9">
-                                <input name="address" type="text" class="form-control" id="address" value="A108 Adam Street, New York, NY 535022">
+                                <div class="row mb-3">
+                                    <label for="address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="address" type="text" class="form-control" id="address" value="">
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="row mb-3">
+                                    <label for="zip" class="col-md-4 col-lg-3 col-form-label">ZIP</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="zip" type="text" class="form-control" id="zip" value="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="city" class="col-md-4 col-lg-3 col-form-label">City</label>
+                                    <div class="col-md-8 col-lg-9">
+                                    <input name="city" type="text" class="form-control" id="city" value="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="state" class="col-md-4 col-lg-3 col-form-label">State</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <select class="form-select" name="state" id="state">
+                                            <!--State List -->
+                                            <option selected="">Select</option>
+                                            <option value="Johor">Johor</option>
+                                            <option value="Kedah">Kedah</option>
+                                            <option value="Kelantan">Kelantan</option>
+                                            <option value="Melaka">Melaka</option>
+                                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                            <option value="Pahang">Pahang</option>
+                                            <option value="Perak">Perak</option>
+                                            <option value="Perlis">Perlis</option>
+                                            <option value="Pulau Pinang">Pulau Pinang</option>
+                                            <option value="Selangor">Selangor</option>
+                                            <option value="Terangganu">Terangganu</option>
+                                            <option value="Sabah">Sabah</option>
+                                            <option value="Sarawak">Sarawak</option>
+                                            <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                            <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                            <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
+                                <div class="text-center">
+                                    <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
                             </form>
                             <!-- End Profile Edit Form -->
                         </div>
