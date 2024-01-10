@@ -36,7 +36,7 @@
             <h1 id="dashboard" >Profile</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('home-customer')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active"><a href="#dashboard">Profile </a></li>
                 </ol>
             </nav>
