@@ -91,6 +91,11 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
+//Routes for About Us
+Route::get('/aboutus-customer', function () {
+    return view('aboutus-customer');
+})->name('aboutus-customer');
+
 // End Customer Parts
 
 

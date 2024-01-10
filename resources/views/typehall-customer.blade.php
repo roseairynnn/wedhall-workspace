@@ -44,7 +44,7 @@
             <h1 id="dashboard">Type of Hall</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="#dashboard">Home</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('home-customer')}}">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Type of Hall</a></li>
                 </ol>
             </nav>

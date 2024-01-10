@@ -36,7 +36,7 @@
             <h1 id="dashboard">Reservation History</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="#dashboard">Home</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('home')}}">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Reservation History</a></li>
                 </ol>
             </nav>

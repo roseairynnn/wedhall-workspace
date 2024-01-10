@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home">
+        <a class="nav-link collapsed" href="home-customer">
           <i class="bi bi-house"></i>
           <span>Home</span>
         </a>
@@ -39,7 +39,7 @@
       <!-- End Reservation History Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('aboutus') }}">
+        <a class="nav-link collapsed" href="{{ route('aboutus-customer') }}">
         <i class="bi bi-shop"></i>
         <span>About Us</span>
         </a>

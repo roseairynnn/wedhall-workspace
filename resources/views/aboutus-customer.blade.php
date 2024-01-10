@@ -17,7 +17,7 @@
 
     <!--sidebar nav-->
     <div class="sidebar-main">
-        @include('components.nav')
+        @include('components.nav-customer')
     </div>
 
     <!--main-->
@@ -27,7 +27,7 @@
             <h1 id="dashboard" >About Us</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('home-customer')}}">Home</a></li>
                 <li class="breadcrumb-item active"><a href="#dashboard">About Us</a></li>
                 </ol>
             </nav>
