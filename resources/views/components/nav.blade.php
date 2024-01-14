@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home">
+        <a class="nav-link collapsed" href="{{route('home')}}">
           <i class="bi bi-house"></i>
           <span>Home</span>
         </a>
