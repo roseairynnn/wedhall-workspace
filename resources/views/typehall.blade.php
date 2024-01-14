@@ -55,8 +55,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $hall->hallname }}</h5>
+                            
+                            <!-- Slides with indicators | Start Display Hall Images-->
                             <div class="card-content">
-                                <!-- Slides with indicators -->
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-indicators">
                                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
@@ -65,15 +66,15 @@
                                     </div>
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="{{asset('./component/img/normal-hall.jpeg')}}" class="d-block w-100" alt="...">
+                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage1) }}" class="d-block w-100" alt="Hall Image 1">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{asset('./component/img/normal-hall2.jpg')}}" class="d-block w-100" alt="...">
+                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage2) }}" class="d-block w-100" alt="Hall Image 2">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{asset('./component/img/normal-hall3.jpeg')}}" class="d-block w-100" alt="...">
+                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage3) }}" class="d-block w-100" alt="Hall Image 3">
                                         </div>
-                                    </div>
+                                    </div>                                    
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
@@ -84,7 +85,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <!-- End Slides with indicators -->
+                            <!-- Slides with indicators | End Display Hall Images-->
 
                             <div class="card-content">
                                 <!-- Start Display Hall Details -->
