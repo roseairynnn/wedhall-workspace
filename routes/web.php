@@ -50,6 +50,7 @@ Route::post('/register-company', [CompanyController::class, 'register'])->name('
 
 //FETCHING DATA FROM COMPANY REGISTRATION FORM (ROUTE)
 Route::get('/company/{companyid}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
+Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCompany'])->name('update.company');
 
 /*

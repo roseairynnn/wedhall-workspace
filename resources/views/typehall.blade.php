@@ -39,7 +39,9 @@
             <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
             
-            <li class="breadcrumb-item"><a href="">Type Hall</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">Type Hall</a></li>
+
+
           </ol>
         </nav>
       </div>
