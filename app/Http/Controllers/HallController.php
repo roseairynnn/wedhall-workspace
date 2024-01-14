@@ -8,12 +8,13 @@ use App\Models\Company;
 
 class HallController extends Controller
 {
+   
+    
     public function showHallsDetails($hallid){
         $hall = Hall::where('hallid', $hallid)->firstOrFail();
-        dd($hall); // Add this line for debugging
-        return view('hall.details', compact('hall'));
+        
+        return view('typehall', ['hall' => $hall]);
     }
-    
 
     public function showAddForm($companyId){
         $company = Company::findOrFail($companyId);

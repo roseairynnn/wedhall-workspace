@@ -309,8 +309,8 @@
                                         <td>{{ $hall->halltype }}</td>
                                         <td>{{ $hall->hallcapacity }}</td>
                                         <td>
-                                          <!--view report-->
-                                          <a href="{{ route('typehall')}}">
+                                          <!--view hall details-->
+                                          <a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">
                                               <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
                                           </a>
                                           <!--Delete Hall-->

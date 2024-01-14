@@ -39,7 +39,7 @@
             <li class="breadcrumb-item active"><a href="{{ route('home')}}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('company')}}">List of Company</a></li>
             
-            <li class="breadcrumb-item"><a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">Type Hall</a></li>
+            <li class="breadcrumb-item"><a href="#">Type Hall</a></li>
 
 
           </ol>
@@ -55,7 +55,7 @@
                     <!-- Start Display Hall -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">HALL A</h5>
+                            <h5 class="card-title">{{ $hall->hallname }}</h5>
                             <div class="card-content">
                                 <!-- Slides with indicators -->
                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
