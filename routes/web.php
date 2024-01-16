@@ -54,6 +54,7 @@ Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCom
 Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])->name('company.delete');
 
 //Hall Route
+Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('halls.details');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
