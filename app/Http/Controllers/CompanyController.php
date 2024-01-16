@@ -48,4 +48,11 @@ class CompanyController extends Controller
 
         return redirect()->route('company-details', ['companyid' => $companyid])->with('success', 'Company details updated successfully!');
     }
+
+    public function delete($companyid) {
+        Company::find($companyid)->delete();
+    
+        // Redirect to the page where you list companies
+        return redirect()->back()->with('success', 'Company deleted successfully');
+    }
 }

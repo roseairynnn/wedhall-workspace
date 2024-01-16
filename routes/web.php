@@ -50,10 +50,12 @@ Route::post('/register-company', [CompanyController::class, 'register'])->name('
 
 //FETCHING DATA FROM COMPANY REGISTRATION FORM (ROUTE)
 Route::get('/company/{companyid}', [CompanyController::class, 'showCompanyDetails'])->name('company-details');
+Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCompany'])->name('update.company');
+Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])->name('company.delete');
+
+//Hall Route
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
-
-Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCompany'])->name('update.company');
 
 /*
 Route::middleware('auth')->group(function () {
