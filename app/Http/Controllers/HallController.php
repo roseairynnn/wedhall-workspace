@@ -21,8 +21,7 @@ class HallController extends Controller
         return view('halls.add', ['companyId' => $companyId, 'company' => $company]);
     }
 
-    public function add(Request $request, $companyId)
-    {
+    public function add(Request $request, $companyId){
         $request->validate([
             'hallname' => 'required|string',
             'halltype' => 'required|string',
@@ -71,4 +70,12 @@ class HallController extends Controller
         return redirect()->route('company-details', ['companyid' => $companyId])
             ->with('success', 'Hall added successfully');
     }
+
+    public function delete($hallid) {
+        Hall::find($hallid)->delete();
+    
+        // Redirect to the page where you list halls
+        return redirect()->back()->with('success', 'Hall deleted successfully');
+    }
+    
 }

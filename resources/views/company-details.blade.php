@@ -303,22 +303,44 @@
                                 </thead>
                                 <tbody>
                                     @foreach($company->halls as $hall) 
-                                    <tr>
-                                        <th scope="row">{{ $hall->hallid }}</th>
-                                        <td>{{ $hall->hallname }}</td>
-                                        <td>{{ $hall->halltype }}</td>
-                                        <td>{{ $hall->hallcapacity }}</td>
-                                        <td>
-                                          <!--view hall details-->
-                                          <a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">
-                                              <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
-                                          </a>
-                                          <!--Delete Hall-->
-                                          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                          <!--Update report
-                                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <th scope="row">{{ $hall->hallid }}</th>
+                                            <td>{{ $hall->hallname }}</td>
+                                            <td>{{ $hall->halltype }}</td>
+                                            <td>{{ $hall->hallcapacity }}</td>
+                                            <td>
+                                            <!--view hall details-->
+                                            <a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">
+                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                            </a>
+                                            <!--Delete Hall-->
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $hall->hallid }}"><i class="bi bi-trash"></i></button>
+                                            
+                                            <!--Update report
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
+                                            </td>
+                                        </tr>
+
+                                        <!-- Delete Confirmation Modal -->
+                                        <div class="modal fade" id="deleteModal{{ $hall->hallid }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Are you sure you want to delete this hall?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                        <a href="{{ route('hall.delete', ['hallid' => $hall->hallid]) }}">
+                                                            <button type="button" class="btn btn-danger">Delete</button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>
