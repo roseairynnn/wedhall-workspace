@@ -260,7 +260,7 @@
                             <!-- End Display Hall Details -->
 
                             <div class="card-content">
-                                <button class="btn btn-primary" type="submit">Edit Hall</button>
+                                <button class="btn btn-primary" type="submit">Book Hall</button>
                             </div>
                         </div>
                     </div>

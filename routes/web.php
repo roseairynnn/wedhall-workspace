@@ -54,7 +54,7 @@ Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCom
 Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])->name('company.delete');
 
 //Hall Route
-Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('halls.details');
+Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('typehall-customer');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
@@ -78,9 +78,6 @@ Route::get('/home-customer', function () {
 })->middleware(['auth', 'verified'])->name('home-customer');
 
 //Routes for Type of Hall Customer
-Route::get('/typehall-customer', function () {
-    return view('typehall-customer');
-})->name('typehall-customer');
 
 //Routes for Reservation History Customer
 Route::get('/reservation-history-customer', function () {
