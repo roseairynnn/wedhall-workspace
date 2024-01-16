@@ -136,39 +136,35 @@
                                                         <td>: RM{{$hall->hallprice}}.00</td>
                                                       </tr>
                                                       <tr>
-                                                        <th scope="row">
-                                                            Hall Services <br>
-                                                            - Lighting System <br>
-                                                            - Audio System <br>
-                                                            - Parking Facility <br>
-                                                        </th>
+                                                        <th scope="row">Lighting System</th>
                                                         <td>
-                                                            <br>
-
                                                             @if($hall->lightingsystem == 1)
                                                                 : <span class="badge bg-success">Available</span>
                                                             @else
                                                                 : <span class="badge bg-danger">Not Available</span>
                                                             @endif 
 
-                                                            <br>
-
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <th scope="row">Audio Visual System</th>
+                                                        <td>
                                                             @if($hall->audiovisualsystem == 1)
                                                                 : <span class="badge bg-success">Available</span>
                                                             @else
                                                                 : <span class="badge bg-danger">Not Available</span>
                                                             @endif 
 
-                                                            <br>
-
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <th scope="row">Parking Facilities</th>
+                                                        <td>
                                                             @if($hall->parkingfacilities == 1)
                                                                 : <span class="badge bg-success">Available</span>
                                                             @else
                                                                 : <span class="badge bg-danger">Not Available</span>
-                                                            @endif 
-
-                                                        </td>
-                                                        </td>
+                                                            @endif
                                                       </tr>
                                                       <tr>
                                                         <th scope="row">Hall Status</th>
