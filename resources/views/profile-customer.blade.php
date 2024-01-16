@@ -26,7 +26,11 @@
 
     <!--sidebar nav-->
     <div class="sidebar-main">
-        @include('components.nav-customer')
+        @if(auth()->user()->role === 'admin')
+            @include('components.nav')
+        @elseif(auth()->user()->role === 'customer')
+            @include('components.nav-customer')
+        @endif
     </div>
 
     <!--main-->

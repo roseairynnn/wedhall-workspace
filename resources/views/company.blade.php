@@ -22,10 +22,16 @@
     <div class="header-main">
         @include('components.header')
     </div>
+    
     <!--sidebar nav-->
     <div class="sidebar-main">
-        @include('components.nav')
+        @if(auth()->user()->role === 'admin')
+            @include('components.nav')
+        @elseif(auth()->user()->role === 'customer')
+            @include('components.nav-customer')
+        @endif
     </div>
+
     <main id="main" class="main">
         <div class="pagetitle">
             <h1 id="dashboard">Company</h1>
