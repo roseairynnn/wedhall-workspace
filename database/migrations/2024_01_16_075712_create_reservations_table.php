@@ -12,7 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('reservationid');
+            $table->unsignedBigInteger('hallid');
+            $table->foreign('hallid')
+                  ->references('hallid')
+                  ->on('halls')
+                  ->onDelete('cascade');
+            $table->unsignedBigInteger('id');
+            $table->foreign('id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
+            $table->unsignedBigInteger('companyid');
+            $table->foreign('companyid')
+                  ->references('companyid')
+                  ->on('companies')
+                  ->onDelete('cascade');
+            $table->string('reservationstartdate');
+            $table->string('reservationenddate');
+            $table->string('reservationstarttime');
+            $table->string('reservationendtime');
             $table->timestamps();
         });
     }
