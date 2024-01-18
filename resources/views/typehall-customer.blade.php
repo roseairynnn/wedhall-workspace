@@ -271,6 +271,19 @@
                                     <form class="row g-3" method="POST" action="#" enctype="multipart/form-data"> 
                                         @csrf
                                         <div class="col-12">
+                                            <label for="fullname" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname" value="{{ auth()->user()->fullname }}" disabled>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" disabled>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="phone" class="form-label">Phone</label>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="{{ auth()->user()->phone }}" disabled>
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
                                             <label for="hallname" class="form-label">Hall Name</label>
                                             <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" disabled>
                                         </div>
@@ -280,80 +293,45 @@
                                         </div>
                                         <div class="col-12">
                                             <label for="hallcapacity" class="form-label">Capacity</label>
-                                            <input type="number" class="form-control" id="hallcapacity" name="hallcapacity" required>
+                                            <div class="input-group mb-3">                                            
+                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="{{$hall->hallcapacity}}" disabled>
+                                            <span class="input-group-text">Pax</span>
+                                            </div>
                                         </div>
-                                        <div class="col-12">
-                                            <label for="services" class="form-label">Services:</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="lightingsystem" id="lightingsystem">
-                                                <label class="form-check-label" for="lightingsystem">Lighting System</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="audiovisualsystem" id="audiovisualsystem">
-                                                <label class="form-check-label" for="audiovisualsystem">Audio Visual System</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="parkingfacilities" id="parkingfacilities">
-                                                <label class="form-check-label" for="parkingfacilities">Parking Facilities</label>
-                                            </div>                                          
-                                        </div>              
-                                        <div class="col-12">
-                                            <label for="hallprice" class="form-label">Price Range</label>       
+                                        <hr>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="reservationstartdate" class="form-label">Date (Start)</label>       
+                                            <input type="date" class="form-control" aria-label="Start Date of Reservation" name="reservationstartdate" id="reservationstartdate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="reservationenddate" class="form-label">Date (End)</label>       
+                                            <input type="date" class="form-control" aria-label="End Date of Reservation" name="reservationenddate" id="reservationenddate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label for="hallprice" class="form-label">Price Range (Day)</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice">
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="{{$hall->hallprice}}" disabled>
                                                 <span class="input-group-text">.00</span>
                                             </div>  
                                         </div>
-                                        <div class="col-12">
-                                            <label for="halldescription" class="form-label">Hall Description</label>    
-                                            <textarea class="form-control" style="height: 100px" id="halldescription" name="halldescription"></textarea>
+                                        <div class="col-md-4">
+                                            <label for="halldays" class="form-label"><font color="red">*</font></label>       
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" style="background-color: white;" name="halldays" id="halldays" value="" disabled>
+                                                <span class="input-group-text">Days</span> 
+                                            </div>  
                                         </div>
                                         <div class="col-12">
-                                            <label for="hallimage1" class="form-label">Image Upload</label>
-                                            <input class="form-control" type="file" id="hallimage1" name="hallimage1" style="margin-bottom: 10px;"> 
-                                            <input class="form-control" type="file" id="hallimage2" name="hallimage2" style="margin-bottom: 10px;">
-                                            <input class="form-control" type="file" id="hallimage3" name="hallimage3" style="margin-bottom: 10px;">
-                                        </div>
-                                        <!--Address-->
-                                        <div class="col-12">
-                                            <label for="halladdress" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="halladdress" name="halladdress">
-                                        </div>
-                                        <div class="col-md-3" >
-                                            <label for="hallzip" class="form-label">ZIP</label>
-                                            <input type="text" class="form-control" id="hallzip" name="hallzip">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="hallcity" class="form-label">City</label>
-                                            <input type="text" class="form-control" id="hallcity" name="hallcity">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="hallstate" class="form-label">State</label>
-                                            <select class="form-select" id="hallstate" name="hallstate" >
-                                                <!--State List -->
-                                                <option selected="">Select</option>
-                                                <option value="Johor">Johor</option>
-                                                <option value="Kedah">Kedah</option>
-                                                <option value="Kelantan">Kelantan</option>
-                                                <option value="Melaka">Melaka</option>
-                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
-                                                <option value="Pahang">Pahang</option>
-                                                <option value="Perak">Perak</option>
-                                                <option value="Perlis">Perlis</option>
-                                                <option value="Pulau Pinang">Pulau Pinang</option>
-                                                <option value="Selangor">Selangor</option>
-                                                <option value="Terangganu">Terangganu</option>
-                                                <option value="Sabah">Sabah</option>
-                                                <option value="Sarawak">Sarawak</option>
-                                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
-                                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
-                                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
-                                            </select>
+                                            <label for="halldays" class="form-label">Amount</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (MYR)" name="halldays" id="halldays" value="{{$hall->hallprice}}" disabled>
+                                            </div>  
                                         </div>
                                         <div class="modal-footer">
                                             <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                            <button type="submit" class="btn btn-primary" name="submit">Add</button>
+                                            <button type="submit" class="btn btn-dark" name="submit">Proceed</button>
                                         </div>
                                     </form>
                                     <!-- End Register Hall Form -->
