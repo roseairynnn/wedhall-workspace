@@ -8,7 +8,6 @@ use App\Models\Company;
 
 class ReservationController extends Controller
 {
-    //Register reservation
     public function showAddForm($reservationid){
         $reservation = Reservation::findOrFail($reservationid);
         return view('reservation.add', ['reservationid' => $reservationid, 'reservation' => $reservation]);
@@ -35,6 +34,7 @@ class ReservationController extends Controller
             'reservationenddate' => $request->input('reservationenddate'),
             'reservationstarttime' => $request->input('reservationstarttime'),
             'reservationendtime' => $request->input('reservationendtime'),
+            
         ]);
 
         // Set boolean values based on checkboxes
