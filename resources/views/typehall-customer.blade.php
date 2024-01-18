@@ -316,9 +316,9 @@
                                             </div>  
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="halldays" class="form-label"><font color="red">*</font></label>       
+                                            <label for="reservationdays" class="form-label"><font color="red">*</font></label>       
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" style="background-color: white;" name="halldays" id="halldays" value="" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" disabled>
                                                 <span class="input-group-text">Days</span> 
                                             </div>  
                                         </div>

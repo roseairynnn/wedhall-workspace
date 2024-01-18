@@ -30,6 +30,7 @@ return new class extends Migration
                   ->onDelete('cascade');
             $table->string('reservationstartdate');
             $table->string('reservationenddate');
+            $table->string('reservationdays');
             $table->string('reservationstarttime');
             $table->string('reservationendtime');
             $table->timestamps();

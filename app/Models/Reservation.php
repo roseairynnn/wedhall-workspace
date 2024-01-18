@@ -17,6 +17,7 @@ class Reservation extends Model
         'companyid',
         'reservationstartdate',
         'reservationenddate',
+        'reservationdays',
         'reservationstarttime',
         'reservationendtime',
     ];
