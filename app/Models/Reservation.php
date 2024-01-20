@@ -20,6 +20,8 @@ class Reservation extends Model
         'reservationdays',
         'reservationstarttime',
         'reservationendtime',
+        'reservationamount',
+        'reservationstatus',
     ];
 
     //this define the relationship between reservation and user 1-M reservation has many users

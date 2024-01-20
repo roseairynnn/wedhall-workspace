@@ -326,7 +326,7 @@
                                             <label for="reservationamount" class="form-label">Amount</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (MYR)" name="reservationamount" id="reservationamount" value="{{$hall->hallprice}}" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" disabled>
                                             </div>  
                                         </div>
                                         <div class="modal-footer">
@@ -360,6 +360,40 @@
       
     </main>
     <!-- End #main -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const startDateInput = document.getElementById('reservationstartdate');
+            const endDateInput = document.getElementById('reservationenddate');
+            const reservationDaysInput = document.getElementById('reservationdays');
+            const hallPriceInput = document.getElementById('hallprice');
+            const reservationAmountInput = document.getElementById('reservationamount');
+
+            function calculateDays() {
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(endDateInput.value);
+                const timeDifference = Math.abs(endDate.getTime() - startDate.getTime());
+                const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+                reservationDaysInput.value = daysDifference;
+
+                calculateAmount(); // Call calculateAmount after updating reservationDays
+            }
+
+            function calculateAmount() {
+                const hallPrice = parseFloat(hallPriceInput.value);
+                const reservationDays = parseInt(reservationDaysInput.value);
+
+                if (!isNaN(hallPrice) && !isNaN(reservationDays)) {
+                    reservationAmountInput.value = (hallPrice * reservationDays).toFixed(2);
+                }
+            }
+
+            startDateInput.addEventListener('change', calculateDays);
+            endDateInput.addEventListener('change', calculateDays);
+            hallPriceInput.addEventListener('change', calculateAmount);
+            reservationDaysInput.addEventListener('change', calculateAmount);
+        });
+    </script>
 
     <!--footer & link url js-->
     @include('components.footer')

@@ -22,6 +22,9 @@ class ReservationController extends Controller
             'reservationenddate' => 'required|string|max:255',
             'reservationstarttime' => 'string|max:255',
             'reservationendtime' => 'string|max:255',
+            'reservationamount' => 'required|string|max:255',
+            'reservationdays' => 'required|string|max:255',
+            'reservationstatus' => 'string|max:255',
             // Add other validation rules as needed
         ]);
 
@@ -34,6 +37,8 @@ class ReservationController extends Controller
             'reservationenddate' => $request->input('reservationenddate'),
             'reservationstarttime' => $request->input('reservationstarttime'),
             'reservationendtime' => $request->input('reservationendtime'),
+            'reservationamount' => $request->input('reservationamount'),    
+            'reservationdays' => $request->input('reservationdays'),    
             'reservationstatus' => 'Pending',
 
         ]);
