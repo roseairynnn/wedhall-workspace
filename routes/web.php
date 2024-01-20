@@ -2,6 +2,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\HallController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,11 @@ Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])-
 Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('typehall-customer');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
+
+//Add Reservation Route
+Route::get('/reservation-history-customer/{hallid}/add-reservation', [ReservationController::class, 'showAddForm'])->name('reservation.add.form');
+Route::post('/reservation-history-customer/{hallid}/add-reservation', [ReservationController::class, 'add'])->name('reservation.add');
+
 
 /*
 Route::middleware('auth')->group(function () {

@@ -34,4 +34,9 @@ class Hall extends Model
     {
         return $this->belongsTo(Company::class, 'companyid');
     }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class, 'hallid');
+    }
 }

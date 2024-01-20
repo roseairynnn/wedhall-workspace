@@ -268,33 +268,33 @@
                                     </div>
                                     <div class="modal-body">
                                     <!-- Register Hall Form -->
-                                    <form class="row g-3" method="POST" action="#" enctype="multipart/form-data"> 
+                                    <form class="row g-3" method="POST" action="{{ route('reservation.add', ['hallid' => $hall->hallid]) }}" enctype="multipart/form-data"> 
                                         @csrf
                                         <div class="col-12">
                                             <label for="fullname" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname" value="{{ auth()->user()->fullname }}" disabled>
+                                            <input type="text" class="form-control" id="fullname" name="fullname" value="{{ auth()->user()->fullname }}" readonly>
                                         </div>
                                         <div class="col-md-7">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" disabled>
+                                            <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                                         </div>
                                         <div class="col-md-5">
                                             <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone" name="phone" value="{{ auth()->user()->phone }}" disabled>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="{{ auth()->user()->phone }}" readonly>
                                         </div>
                                         <hr>
                                         <div class="col-12">
                                             <label for="hallname" class="form-label">Hall Name</label>
-                                            <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" disabled>
+                                            <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" readonly>
                                         </div>
                                         <div class="col-12">
                                             <label for="halltype" class="form-label">Hall Type</label>
-                                            <input type="text" class="form-control" id="halltype" name="halltype" value="{{$hall->halltype}}" disabled>
+                                            <input type="text" class="form-control" id="halltype" name="halltype" value="{{$hall->halltype}}" readonly>
                                         </div>
                                         <div class="col-12">
                                             <label for="hallcapacity" class="form-label">Capacity</label>
                                             <div class="input-group mb-3">                                            
-                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="{{$hall->hallcapacity}}" disabled>
+                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="{{$hall->hallcapacity}}" readonly>
                                             <span class="input-group-text">Pax</span>
                                             </div>
                                         </div>
@@ -311,14 +311,14 @@
                                             <label for="hallprice" class="form-label">Price Range (Day)</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="{{$hall->hallprice}}" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="{{$hall->hallprice}}" readonly>
                                                 <span class="input-group-text">.00</span>
                                             </div>  
                                         </div>
                                         <div class="col-md-4">
                                             <label for="reservationdays" class="form-label"><font color="red">*</font></label>       
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" readonly>
                                                 <span class="input-group-text">Days</span> 
                                             </div>  
                                         </div>
@@ -326,7 +326,7 @@
                                             <label for="reservationamount" class="form-label">Amount</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" readonly>
                                             </div>  
                                         </div>
                                         <div class="modal-footer">

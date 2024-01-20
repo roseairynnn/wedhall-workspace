@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Hall;
@@ -8,20 +9,21 @@ use App\Models\Company;
 
 class ReservationController extends Controller
 {
-    public function showAddForm($reservationid){
-        $reservation = Reservation::findOrFail($reservationid);
-        return view('reservation.add', ['reservationid' => $reservationid, 'reservation' => $reservation]);
+    public function showAddForm($hallid){
+        $hall = Hall::findOrFail($hallid);
+        return view('reservation.add', ['hallid' => $hallid, 'hall' => $hall]);
     }
 
-    public function add(Request $request, $reservationid){
+    public function add(Request $request, $hallid){
+        // Log the POST data from the form
+        Log::info('POST data: ', $request->all());
+
         $request->validate([
             'hallid' => 'required|string|max:255',
             'id' => 'required|string|max:255',
             'companyid' => 'required|string|max:255',
             'reservationstartdate' => 'required|string|max:255',
             'reservationenddate' => 'required|string|max:255',
-            'reservationstarttime' => 'string|max:255',
-            'reservationendtime' => 'string|max:255',
             'reservationamount' => 'required|string|max:255',
             'reservationdays' => 'required|string|max:255',
             'reservationstatus' => 'string|max:255',
@@ -30,13 +32,11 @@ class ReservationController extends Controller
 
         // Create a new Reservation instance
         $reservation = new Reservation([
-            'hallid' => $reservationid,
+            'hallid' => $hallid,
             'id' => $request->input('id'),
             'companyid' => $request->input('companyid'),
             'reservationstartdate' => $request->input('reservationstartdate'),
             'reservationenddate' => $request->input('reservationenddate'),
-            'reservationstarttime' => $request->input('reservationstarttime'),
-            'reservationendtime' => $request->input('reservationendtime'),
             'reservationamount' => $request->input('reservationamount'),    
             'reservationdays' => $request->input('reservationdays'),    
             'reservationstatus' => 'Pending',
@@ -61,7 +61,7 @@ class ReservationController extends Controller
         $reservation->save();
 
         // Redirect to the company details page
-        return redirect()->route('reservation-history-customer', ['reservationid' => $reservationid])->with('success', 'Reservation registered successfully!');
+        return redirect()->route('reservation-history-customer', ['hallid' => $hallid])->with('success', 'Reservation registered successfully!');
     }
 
     //FETCHING DATA FROM RESERVATION FORM
@@ -87,8 +87,9 @@ class ReservationController extends Controller
             'companyid' => 'required|string|max:255',
             'reservationstartdate' => 'required|string|max:255',
             'reservationenddate' => 'required|string|max:255',
-            'reservationstarttime' => 'required|string|max:255',
-            'reservationendtime' => 'required|string|max:255',
+            'reservationamount' => 'required|string|max:255',
+            'reservationdays' => 'required|string|max:255',
+            'reservationstatus' => 'required|string|max:255',
         ]);
 
         // Update the reservation record

@@ -31,8 +31,6 @@ return new class extends Migration
             $table->string('reservationstartdate');
             $table->string('reservationenddate');
             $table->string('reservationdays');
-            $table->string('reservationstarttime');
-            $table->string('reservationendtime');
             $table->string('reservationamount');
             $table->enum('reservationstatus', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->timestamps();

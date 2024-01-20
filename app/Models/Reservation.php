@@ -18,24 +18,22 @@ class Reservation extends Model
         'reservationstartdate',
         'reservationenddate',
         'reservationdays',
-        'reservationstarttime',
-        'reservationendtime',
         'reservationamount',
         'reservationstatus',
     ];
 
-    //this define the relationship between reservation and user 1-M reservation has many users
-    public function users(){
-        return $this->hasMany(User::class, 'id');
-    }
-    
-    //this define the relationship between reservation and hall 1-M reservation has many halls
-    public function halls(){
-        return $this->hasMany(Hall::class, 'hallid');
+    public function hall()
+    {
+        return $this->belongsTo(Hall::class, 'hallid');
     }
 
-    //this define the relationship between reservation and company 1-M reservation has many companies
-    public function companies(){
-        return $this->hasMany(Company::class, 'companyid');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'companyid');
     }
 }
