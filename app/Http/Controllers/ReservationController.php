@@ -20,8 +20,8 @@ class ReservationController extends Controller
             'companyid' => 'required|string|max:255',
             'reservationstartdate' => 'required|string|max:255',
             'reservationenddate' => 'required|string|max:255',
-            'reservationstarttime' => 'required|string|max:255',
-            'reservationendtime' => 'required|string|max:255',
+            'reservationstarttime' => 'string|max:255',
+            'reservationendtime' => 'string|max:255',
             // Add other validation rules as needed
         ]);
 
@@ -34,7 +34,8 @@ class ReservationController extends Controller
             'reservationenddate' => $request->input('reservationenddate'),
             'reservationstarttime' => $request->input('reservationstarttime'),
             'reservationendtime' => $request->input('reservationendtime'),
-            
+            'reservationstatus' => 'Pending',
+
         ]);
 
         // Set boolean values based on checkboxes

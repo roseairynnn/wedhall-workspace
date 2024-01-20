@@ -323,10 +323,10 @@
                                             </div>  
                                         </div>
                                         <div class="col-12">
-                                            <label for="halldays" class="form-label">Amount</label>       
+                                            <label for="reservationamount" class="form-label">Amount</label>       
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (MYR)" name="halldays" id="halldays" value="{{$hall->hallprice}}" disabled>
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (MYR)" name="reservationamount" id="reservationamount" value="{{$hall->hallprice}}" disabled>
                                             </div>  
                                         </div>
                                         <div class="modal-footer">
