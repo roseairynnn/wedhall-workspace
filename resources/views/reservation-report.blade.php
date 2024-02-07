@@ -54,6 +54,101 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" style="border-bottom: 1px solid #dee2e6;">List of Reservation</h5>
+
+                            <!-- Vertically centered Modal Update Reservation-->
+                            <div class="modal fade" id="verticalycentered-updatereservation" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title">Update Reservation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <!-- Update Reservation Form -->
+                                    <form class="row g-3" method="POST" action="#" enctype="multipart/form-data"> 
+                                        @csrf
+                                        <div class="col-12">
+                                            <label for="fullname" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname" value="#" readonly>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email" value="#" readonly>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="phone" class="form-label">Phone</label>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="#" readonly>
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label for="hallname" class="form-label">Hall Name</label>
+                                            <input type="text" class="form-control" id="hallname" name="hallname" value="#" readonly>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="halltype" class="form-label">Hall Type</label>
+                                            <input type="text" class="form-control" id="halltype" name="halltype" value="#" readonly>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="hallcapacity" class="form-label">Capacity</label>
+                                            <div class="input-group mb-3">                                            
+                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="#" readonly>
+                                            <span class="input-group-text">Pax</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="reservationstartdate" class="form-label">Date (Start)</label>       
+                                            <input type="date" class="form-control" aria-label="Start Date of Reservation" name="reservationstartdate" id="reservationstartdate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="reservationenddate" class="form-label">Date (End)</label>       
+                                            <input type="date" class="form-control" aria-label="End Date of Reservation" name="reservationenddate" id="reservationenddate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label for="hallprice" class="form-label">Price Range (Day)</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="#" readonly>
+                                                <span class="input-group-text">.00</span>
+                                            </div>  
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="reservationdays" class="form-label"><font color="red">*</font></label>       
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" readonly>
+                                                <span class="input-group-text">Days</span> 
+                                            </div>  
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="reservationamount" class="form-label">Amount</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" readonly>
+                                            </div>  
+                                        </div>
+                                        <hr>
+                                        <div class="col-20">
+                                            <label class="col-sm-2 col-form-label">Validation</label>
+                                            <select class="form-select" aria-label="Validation" style="margin-bottom:2rem;">
+                                            <option selected="">Pending</option>
+                                            <option style="color: green;" value="Approved">Approved</option>
+                                            <option style="color: red;" value="Rejected">Rejected</option>
+                                            </select>
+                                        </div>
+                                    
+                                        <div class="modal-footer">
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                                            <button type="submit" class="btn btn-dark" name="submit">Update</button>
+                                        </div>
+                                    </form>
+                                    <!-- End Update Reservation Form -->
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End Vertically centered Modal Update Reservation-->
+
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -61,7 +156,7 @@
                                     <th scope="col">Reservation ID</th>
                                     <th scope="col">Customer Email</th>
                                     <th scope="col">Hall Type</th>
-                                    <th scope="col">Date | Time</th>
+                                    <th scope="col">Start Date | End Date</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -81,12 +176,8 @@
                                                 <td class="yellow"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
                                             @endif
                                             <td>
-                                                <!--view report-->
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
-                                                </a>
                                                 <!--Update report-->
-                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-updatereservation"><i class="bi bi-pencil-square"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
