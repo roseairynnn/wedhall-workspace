@@ -29,10 +29,6 @@ Route::get('/company-details', function () {
     return view('company-details');
 })->name('company-details');
 
-Route::get('/reservation-report', function () {
-    return view('reservation-report');
-})->name('reservation-report');
-
 Route::get('/typehall', function () {
     return view('typehall');
 })->name('typehall');
@@ -57,6 +53,7 @@ Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('ha
 
 //Add Reservation Route
 Route::get('/reservation-history-customer', [ReservationController::class, 'showReservationsCustomer'])->name('reservation-history-customer');
+Route::get('reservation-report', [ReservationController::class, 'showReservations'])->name('reservation-report');
 Route::post('/typehall-customer/{hallid}/add-reservation', [ReservationController::class, 'add'])->name('reservation.add');
 
 

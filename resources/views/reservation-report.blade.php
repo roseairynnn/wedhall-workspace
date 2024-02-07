@@ -67,24 +67,29 @@
                                 </tr>
                                 </thead>
                                 <tbody
-                                @foreach($reservations as $reservation)
-                                    <tr>
-                                        <th scope="row">{{ $reservation->reservationid }}</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-warning">{{$reservation->reservationstatus}}</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
-                                            </a>
-                                            <!--Update report-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach($reservations as $reservation)
+                                        <tr>
+                                            <th scope="row">{{ $reservation->reservationid }}</th>
+                                            <td>{{ $reservation->user->email }}</td>
+                                            <td>{{ $reservation->hall->halltype }}</td>
+                                            <td>{{ $reservation->reservationstartdate }} | {{ $reservation->reservationenddate }}</td>
+                                            @if($reservation->reservationstatus == 'Approved')
+                                                <td class="green"><span class="badge bg-success">{{ $reservation->reservationstatus }}</span></td>
+                                            @elseif($reservation->reservationstatus == 'Rejected')
+                                                <td class="red"><span class="badge bg-danger">{{ $reservation->reservationstatus }}</span></td>
+                                            @elseif($reservation->reservationstatus == 'Pending')
+                                                <td class="yellow"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
+                                            @endif
+                                            <td>
+                                                <!--view report-->
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
+                                                </a>
+                                                <!--Update report-->
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
