@@ -67,11 +67,12 @@
                                 </tr>
                                 </thead>
                                 <tbody
+                                    {{ dd($reservations) }}
                                     @foreach($reservations as $reservation)
                                         <tr>
                                             <th scope="row">{{ $reservation->reservationid }}</th>
                                             <td>{{ auth()->user()->email }}</td>
-                                            <td>{{ $reservation->hall->halltype }}/td>
+                                            <td>{{ $reservation->hall->halltype }}</td>
                                             <td>{{ $reservation->reservationstartdate }} | {{ $reservation->reservationenddate }}</td>
                                             <td class="green"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
                                             <td>
