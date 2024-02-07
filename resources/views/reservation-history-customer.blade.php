@@ -67,14 +67,19 @@
                                 </tr>
                                 </thead>
                                 <tbody
-                                    {{ dd($reservations) }}
                                     @foreach($reservations as $reservation)
                                         <tr>
                                             <th scope="row">{{ $reservation->reservationid }}</th>
                                             <td>{{ auth()->user()->email }}</td>
-                                            <td>{{ $reservation->hall->halltype }}</td>
+                                            <td>{{$reservation->hall->halltype}}</td>
                                             <td>{{ $reservation->reservationstartdate }} | {{ $reservation->reservationenddate }}</td>
-                                            <td class="green"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
+                                            @if($reservation->reservationstatus == 'Approved')
+                                                <td class="green"><span class="badge bg-success">{{ $reservation->reservationstatus }}</span></td>
+                                            @elseif($reservation->reservationstatus == 'Rejected')
+                                                <td class="red"><span class="badge bg-danger">{{ $reservation->reservationstatus }}</span></td>
+                                            @elseif($reservation->reservationstatus == 'Pending')
+                                                <td class="yellow"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
+                                            @endif
                                             <td>
                                                 <!--view report-->
                                                 <a href="#">

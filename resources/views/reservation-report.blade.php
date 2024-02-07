@@ -58,7 +58,6 @@
                             <table class="table datatable">
                                 <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Reservation ID</th>
                                     <th scope="col">Customer Email</th>
                                     <th scope="col">Hall Type</th>
@@ -68,13 +67,14 @@
                                 </tr>
                                 </thead>
                                 <tbody
+                                @foreach($reservations as $reservation)
                                     <tr>
-                                        <th scope="row"></th>
+                                        <th scope="row">{{ $reservation->reservationid }}</th>
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td class="green"><span class="badge bg-warning">Pending</span></td>
+                                        <td class="green"><span class="badge bg-warning">{{$reservation->reservationstatus}}</span></td>
                                         <td>
                                             <!--view report-->
                                             <a href="#">
@@ -84,38 +84,7 @@
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-success">Approved</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
-                                            </a>
-                                            <!--Update report-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-danger">Rejected</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-eye"></i></button>
-                                            </a>
-                                            <!--Update report-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

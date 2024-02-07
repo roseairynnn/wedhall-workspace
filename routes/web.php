@@ -25,10 +25,6 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/company', function () {
-    return view('company');
-})->name('company');
-
 Route::get('/company-details', function () {
     return view('company-details');
 })->name('company-details');
@@ -60,7 +56,7 @@ Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->n
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
 //Add Reservation Route
-Route::get('/reservation-history-customer/{id}', [ReservationController::class, 'showReservationsCustomer'])->name('show.reservations.customer');
+Route::get('/reservation-history-customer', [ReservationController::class, 'showReservationsCustomer'])->name('reservation-history-customer');
 Route::post('/typehall-customer/{hallid}/add-reservation', [ReservationController::class, 'add'])->name('reservation.add');
 
 
@@ -86,9 +82,7 @@ Route::get('/home-customer', function () {
 //Routes for Type of Hall Customer
 
 //Routes for Reservation History Customer
-Route::get('/reservation-history-customer', function () {
-    return view('reservation-history-customer');
-})->name('reservation-history-customer');
+
 
 //Routes for Profile
 Route::get('/profile-customer', function () {
