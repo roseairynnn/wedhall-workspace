@@ -64,7 +64,7 @@ class ReservationController extends Controller
         $reservation->save();
 
         // Redirect to the company details page
-        return redirect()->route('reservation-history-customer', ['hallid' => $hallid])->with('success', 'Reservation registered successfully!');
+        return redirect()->route('reservation-history-customer', [$user->id,])->with('success', 'Reservation registered successfully!');
     }
 
     //FETCHING DATA FROM RESERVATION FORM
@@ -110,7 +110,8 @@ class ReservationController extends Controller
 
     //FETCHING DATA FROM RESERVATION FORM
     public function showReservationsCustomer(){
-        $reservations = Reservation::all();
+        $userId = auth()->id();
+        $reservations = Reservation::where('id', $userId)->get();
         return view('reservation-history-customer', ['reservations' => $reservations]);
     }
 }

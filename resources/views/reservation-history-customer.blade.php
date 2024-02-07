@@ -58,7 +58,6 @@
                             <table class="table datatable">
                                 <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Reservation ID</th>
                                     <th scope="col">Customer Email</th>
                                     <th scope="col">Hall Type</th>
@@ -68,48 +67,21 @@
                                 </tr>
                                 </thead>
                                 <tbody
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-warning">Pending</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-success">Approved</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="green"><span class="badge bg-danger">Rejected</span></td>
-                                        <td>
-                                            <!--view report-->
-                                            <a href="#">
-                                                <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach($reservations as $reservation)
+                                        <tr>
+                                            <th scope="row">{{ $reservation->reservationid }}</th>
+                                            <td>{{ auth()->user()->email }}</td>
+                                            <td>{{ $reservation->hall->halltype }}/td>
+                                            <td>{{ $reservation->reservationstartdate }} | {{ $reservation->reservationenddate }}</td>
+                                            <td class="green"><span class="badge bg-warning">{{ $reservation->reservationstatus }}</span></td>
+                                            <td>
+                                                <!--view report-->
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-dark"><i class="bi bi-printer-fill"></i></button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

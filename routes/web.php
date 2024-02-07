@@ -60,7 +60,7 @@ Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->n
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
 //Add Reservation Route
-Route::get('/reservation-history-customer/{hallid}/add-reservation', [ReservationController::class, 'showAddForm'])->name('reservation.add.form');
+Route::get('/reservation-history-customer/{id}', [ReservationController::class, 'showReservationsCustomer'])->name('show.reservations.customer');
 Route::post('/typehall-customer/{hallid}/add-reservation', [ReservationController::class, 'add'])->name('reservation.add');
 
 
