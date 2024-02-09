@@ -43,7 +43,6 @@ class ReservationController extends Controller
             'reservationamount' => $request->input('reservationamount'),    
             'reservationdays' => $request->input('reservationdays'),    
             'reservationstatus' => 'Pending',
-
         ]);
 
         // Set boolean values based on checkboxes
@@ -74,14 +73,15 @@ class ReservationController extends Controller
     }
 
     public function showReservationDetails($reservationid){
-        $reservation = Reservation::findOrFail($reservationid);
+        $reservation = Reservation::with('hall', 'user', 'company')->findOrFail($reservationid);
         return view('reservation-report', ['reservation' => $reservation]);
     }
 
-    public function updateReservation(Request $request, $reservationid)
-    {
+    public function updateReservation(Request $request, $reservationid){
+        Log::info('POST data: ', $request->all());
+
         // Find the reservation by ID
-        $reservation = Reservation::findOrFail($reservationid);
+        $reservations = Reservation::findOrFail($reservationid);
 
         // Validation (customize this based on your needs)
         $request->validate([
@@ -95,11 +95,10 @@ class ReservationController extends Controller
             'reservationstatus' => 'required|string|max:255',
         ]);
 
-        // Update the reservation record
-        $reservation->update($request->all());
-
-        return redirect()->route('reservation-history-customer', ['reservationid' => $reservationid])->with('success', 'Reservation details updated successfully!');
+        // Pass the reservation data to the view
+        return view('reservation-report', compact('reservation'));
     }
+
 
     public function delete($reservationid) {
         Reservation::find($reservationid)->delete();

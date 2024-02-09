@@ -54,6 +54,7 @@ Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('ha
 //Add Reservation Route
 Route::get('/reservation-history-customer', [ReservationController::class, 'showReservationsCustomer'])->name('reservation-history-customer');
 Route::get('reservation-report', [ReservationController::class, 'showReservations'])->name('reservation-report');
+Route::post('/update-reservation-report/{reservationid}',[ReservationController::class, 'updateReservation'])->name('update.reservation');
 Route::post('/typehall-customer/{hallid}/add-reservation', [ReservationController::class, 'add'])->name('reservation.add');
 
 

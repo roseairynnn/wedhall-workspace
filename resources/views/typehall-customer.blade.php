@@ -179,28 +179,28 @@
                                                 <!--<strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
                                                 <table class="table table-striped">
                                                     <thead>
-                                                      <tr>
+                                                        <tr>
                                                         <th scope="col">Hall Details</th>
-                                                      </tr>
+                                                        </tr>
                                                     </thead>
                                                     <tbody>
-                                                      <tr>
+                                                        <tr>
                                                         <th scope="row">Hall Name</th>
                                                         <td>: {{$hall->hallname}}</td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Hall Type</th>
                                                         <td>: {{$hall->halltype}}</td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Hall Capacity</th>
                                                         <td>: {{$hall->hallcapacity}} pax</td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Hall Price</th>
                                                         <td>: RM{{$hall->hallprice}}.00</td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Lighting System</th>
                                                         <td>
                                                             @if($hall->lightingsystem == 1)
@@ -210,8 +210,8 @@
                                                             @endif 
 
                                                         </td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Audio Visual System</th>
                                                         <td>
                                                             @if($hall->audiovisualsystem == 1)
@@ -221,8 +221,8 @@
                                                             @endif 
 
                                                         </td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Parking Facilities</th>
                                                         <td>
                                                             @if($hall->parkingfacilities == 1)
@@ -230,8 +230,8 @@
                                                             @else
                                                                 : <span class="badge bg-danger">Not Available</span>
                                                             @endif
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Hall Status</th>
                                                         <td>
                                                             @if($hall->hallstatus == 'Available')
@@ -240,17 +240,17 @@
                                                                 : <span class="badge bg-danger">Not Available</span>
                                                             @endif
                                                         </td>
-                                                      </tr>
-                                                      <tr>
+                                                        </tr>
+                                                        <tr>
                                                         <th scope="row">Hall Address</th>
                                                         <td>
                                                             :   {{ ucwords(strtolower($hall->halladdress)) }},
                                                                 {{ ucwords(strtolower($hall->hallzip)) }} {{ ucwords(strtolower($hall->hallcity)) }},
                                                                 {{ ucwords(strtolower($hall->hallstate)) }}
                                                         </td>
-                                                      </tr>
+                                                        </tr>
                                                     </tbody>
-                                                  </table>
+                                                    </table>
                                             </div>
                                         </div>
                                     </div>

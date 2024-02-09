@@ -295,6 +295,7 @@
                                 </div>
                             </div>
                             <!-- End Vertically centered Modal Register Hall-->
+                            
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -314,15 +315,15 @@
                                             <td>{{ $hall->halltype }}</td>
                                             <td>{{ $hall->hallcapacity }}</td>
                                             <td>
-                                            <!--view hall details-->
-                                            <a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">
-                                                <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
-                                            </a>
-                                            <!--Delete Hall-->
-                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $hall->hallid }}"><i class="bi bi-trash"></i></button>
-                                            
-                                            <!--Update report
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
+                                                <!--view hall details-->
+                                                <a href="{{ route('hall.details', ['hallid' => $hall->hallid]) }}">
+                                                    <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                                                </a>
+                                                <!--Delete Hall-->
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $hall->hallid }}"><i class="bi bi-trash"></i></button>
+                                                
+                                                <!--Update report
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-update"><i class="bi bi-pencil-square"></i></button>-->
                                             </td>
                                         </tr>
 
