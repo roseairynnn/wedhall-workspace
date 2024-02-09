@@ -59,6 +59,127 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $hall->hallname }}</h5>
+
+                             <!-- Vertically centered Modal Update Hall-->
+                             <div class="modal fade" id="verticalycentered-updatehall" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title">Update {{$hall->hallname}}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <!-- Update Update Form -->
+                                    <form class="row g-3" method="POST" action="{{ route('update.hall', ['hallid' => $hall->hallid]) }}" enctype="multipart/form-data"> 
+                                        @csrf
+                                        <div class="col-12">
+                                            <label for="hallname" class="form-label">Hall Name</label>
+                                            <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="halltype" class="form-label">Hall Type</label>
+                                            <select class="form-select" aria-label="Default select example" id="halltype" name="halltype">
+                                              @if($hall->halltype == 'Ballroom')
+                                                <option value="Ballroom" selected>{{$hall->halltype}}</option>
+                                                <option value="Glasshouse">Glasshouse</option>
+                                                <option value="Garden Halls">Garden Halls</option>
+
+                                                @elseif($hall->halltype == 'Glasshouse')
+                                                <option value="Glasshouse" selected>{{$hall->halltype}}</option>
+                                                <option value="Ballroom">Ballroom</option>
+                                                <option value="Garden Halls">Garden Halls</option>
+
+                                                @elseif($hall->halltype == 'Garden Halls')
+                                                <option value="Garden Halls" selected>{{$hall->halltype}}</option>
+                                                <option value="Ballroom">Ballroom</option>
+                                                <option value="Glasshouse">Glasshouse</option>
+
+                                                @endif
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="services" class="form-label">Services:</label>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input lightingsystem" type="checkbox" id="lightingsystem" {{ $hall->lightingsystem == 1 ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="lightingsystem">Lighting System</label>
+                                            </div>
+                                        
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input audiovisualsystem" type="checkbox" id="audiovisualsystem" {{ $hall->audiovisualsystem == 1 ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="audiovisualsystem">Audio Visual System</label>
+                                            </div>
+                                        
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input parkingfacilities" type="checkbox" id="parkingfacilities" {{ $hall->parkingfacilities == 1 ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="parkingfacilities">Parking Facilities</label>
+                                            </div>
+                                        </div>                                                                              
+                                        <div class="col-12">
+                                            <label for="hallprice" class="form-label">Price Range</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" value="{{$hall->hallprice}}" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice">
+                                                <span class="input-group-text">.00</span>
+                                            </div>  
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="halldescription" class="form-label">Hall Description</label>    
+                                            <textarea class="form-control" style="height: 100px" id="halldescription" name="halldescription">{{$hall->halldescription}}</textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="hallimage1" class="form-label">Image Upload</label>
+                                            <input class="form-control" type="file" id="hallimage1" name="hallimage1" style="margin-bottom: 10px;"> 
+                                            <input class="form-control" type="file" id="hallimage2" name="hallimage2" style="margin-bottom: 10px;">
+                                            <input class="form-control" type="file" id="hallimage3" name="hallimage3" style="margin-bottom: 10px;">
+                                        </div>
+                                        <!--Address-->
+                                        <div class="col-12">
+                                            <label for="halladdress" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="halladdress" name="halladdress" value="{{$hall->halladdress}}">
+                                        </div>
+                                        <div class="col-md-3" >
+                                            <label for="hallzip" class="form-label">ZIP</label>
+                                            <input type="text" class="form-control" id="hallzip" name="hallzip" value="{{$hall->hallzip}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="hallcity" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="hallcity" name="hallcity" value="{{$hall->hallcity}}">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="hallstate" class="form-label">State</label>
+                                            <select class="form-select" id="hallstate" name="hallstate" value="{{$hall->hallstate}}">
+                                                <!--State List -->
+                                                <option style="color: blue" selected="">{{$hall->hallstate}}</option>
+                                                <option value="Johor">Johor</option>
+                                                <option value="Kedah">Kedah</option>
+                                                <option value="Kelantan">Kelantan</option>
+                                                <option value="Melaka">Melaka</option>
+                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                <option value="Pahang">Pahang</option>
+                                                <option value="Perak">Perak</option>
+                                                <option value="Perlis">Perlis</option>
+                                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                                <option value="Selangor">Selangor</option>
+                                                <option value="Terangganu">Terangganu</option>
+                                                <option value="Sabah">Sabah</option>
+                                                <option value="Sarawak">Sarawak</option>
+                                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                                            <button type="submit" class="btn btn-primary" name="submit">Update</button>
+                                        </div>
+                                    </form>
+                                    <!-- End Update Hall Form -->
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End Vertically centered Modal Update Hall-->
                             
                             <!-- Slides with indicators | Start Display Hall Images-->
                             <div class="card-content">
@@ -198,7 +319,9 @@
                             <!-- End Display Hall Details -->
 
                             <div class="card-content">
-                                <button class="btn btn-primary" type="submit">Edit Hall</button>
+                                <button class="btn btn-primary" id="update-hall" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered-updatehall" type="submit">
+                                    Edit Hall
+                                </button>
                             </div>
                         </div>
                     </div>

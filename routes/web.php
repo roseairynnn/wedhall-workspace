@@ -49,6 +49,7 @@ Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])-
 //Hall Route
 Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('typehall-customer');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
+Route::post('/update-hall/{hallid}', [HallController::class, 'updateHall'])->name('update.hall');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
 //Add Reservation Route

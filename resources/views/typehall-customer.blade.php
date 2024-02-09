@@ -82,29 +82,27 @@
                             </div>
                             </div>
                             <div class="row mb-3">
-                            <label for="inputTime" class="col-sm-2 col-form-label">Start Time</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control">
-                            </div>
-                            </div>
-                            <div class="row mb-3">
-                            <label for="endTime" class="col-sm-2 col-form-label">End Time</label>
-                            <div class="col-sm-10">
-                                <input type="time" id="endTime" name="endTime" class="form-control">
-                            </div>
+                                <label for="hallcapacity" class="col-sm-2 col-form-label">Capacity</label>
+                                <div class="col-sm-10">
+                                    <input type="number" id="hallcapacity" name="hallcapacity" class="form-control">
+                                </div>
                             </div>
                             <div class="row mb-3">
-                            <label for="hallcapacity" class="col-sm-2 col-form-label">Capacity</label>
-                            <div class="col-sm-10">
-                                <input type="number" id="hallcapacity" name="hallcapacity" class="form-control">
+                                <label for="halltype" class="col-sm-2 col-form-label">Capacity</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected="">Select Hall Type</option>
+                                        <option value="Ballroom">Ballroom</option>
+                                        <option value="Garden Hall">Garden Hall</option>
+                                        <option value="Glasshouse">Glasshouse</option>
+                                    </select>
+                                </div>
                             </div>
-                            </div>
-
                             <div class="row mb-3">
-                            <div class="col-sm-10">
-                                <button type="submit" id="search" name="search" class="btn btn-primary">Search</button>
+                                <div class="col-sm-10">
+                                    <button type="submit" id="search" name="search" class="btn btn-primary">Search</button>
+                                </div>
                             </div>
-                        </div>
                     </form>
                     <!-- End General Form Elements -->
                 </div>
@@ -114,9 +112,10 @@
           <br>
 
             <div class="row">
-                <div class="col-lg-6">
+                @foreach($halls as $hall)
+                <div style="margin-bottom: 40px" class="col-lg-6">
                 <!-- Start Display Hall -->
-                    @foreach($halls as $hall)
+                    
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $hall->hallname }}</h5>
@@ -131,13 +130,13 @@
                                     </div>
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage1) }}" class="d-block w-100" alt="Hall Image 1">
+                                            <img style="height: 180px;" src="{{ asset('storage/hall_images/'.$hall->hallimage1) }}" class="d-block w-100" alt="Hall Image 1">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage2) }}" class="d-block w-100" alt="Hall Image 2">
+                                            <img style="height: 180px;" src="{{ asset('storage/hall_images/'.$hall->hallimage2) }}" class="d-block w-100" alt="Hall Image 2">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{ asset('storage/hall_images/'.$hall->hallimage3) }}" class="d-block w-100" alt="Hall Image 3">
+                                            <img style="height: 180px;" src="{{ asset('storage/hall_images/'.$hall->hallimage3) }}" class="d-block w-100" alt="Hall Image 3">
                                         </div>
                                     </div>                                    
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -161,7 +160,7 @@
                                                 Hall Description
                                             </button>
                                         </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 {{ $hall->halldescription }}
                                                 <!--<strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
@@ -349,9 +348,10 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    
                 <!-- End Display Hall -->
                 </div>
+                @endforeach
             </div>
         </section>
         <!-- End Content -->
