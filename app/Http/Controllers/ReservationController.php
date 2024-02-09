@@ -85,18 +85,12 @@ class ReservationController extends Controller
 
         // Validation (customize this based on your needs)
         $request->validate([
-            'hallid' => 'required|string|max:255',
-            'id' => 'required|string|max:255',
-            'companyid' => 'required|string|max:255',
-            'reservationstartdate' => 'required|string|max:255',
-            'reservationenddate' => 'required|string|max:255',
-            'reservationamount' => 'required|string|max:255',
-            'reservationdays' => 'required|string|max:255',
             'reservationstatus' => 'required|string|max:255',
         ]);
 
         // Pass the reservation data to the view
-        return view('reservation-report', compact('reservation'));
+        $reservations->update($request->all());
+        return redirect()->route('reservation-report')->with('success', 'Reservation details updated successfully!');
     }
 
 

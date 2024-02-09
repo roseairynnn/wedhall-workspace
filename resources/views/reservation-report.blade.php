@@ -178,7 +178,7 @@
                                             @endif
                                             <td>
                                                 <!--Update report-->
-                                                <button type="button" id="update-reservation-report{{$reservation->reservationid}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-updatereservation{{$reservation->reservationid}}"><i class="bi bi-pencil-square"></i></button>
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#verticalycentered-updatereservation{{$reservation->reservationid}}"><i class="bi bi-pencil-square"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
