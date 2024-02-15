@@ -34,6 +34,8 @@ return new class extends Migration
             $table->string('hallimage3');
             $table->string('hallstatus');
             $table->string('halltype');
+            $table->float('latitude', 10, 6);
+            $table->float('longitude', 10, 6);
             
             // Convert the following columns to boolean
             $table->boolean('lightingsystem')->default(false);

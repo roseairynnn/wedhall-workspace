@@ -249,6 +249,14 @@
                                         </div>
                                         <!--Address-->
                                         <div class="col-12">
+                                            <label for="latitude" class="form-label">Latitude</label>
+                                            <input type="text" class="form-control" id="latitude" name="latitude">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="longitude" class="form-label">Longitude</label>
+                                            <input type="text" class="form-control" id="longitude" name="longitude">
+                                        </div>
+                                        <div class="col-12">
                                             <label for="halladdress" class="form-label">Address</label>
                                             <input type="text" class="form-control" id="halladdress" name="halladdress">
                                         </div>

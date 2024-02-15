@@ -24,6 +24,8 @@ class Hall extends Model
         'hallimage3',
         'hallstatus',
         'halltype',
+        'latitude',
+        'longitude',
         'lightingsystem',
         'audiovisualsystem',
         'parkingfacilities',

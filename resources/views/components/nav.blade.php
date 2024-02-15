@@ -21,7 +21,7 @@
             <a href="{{ route('company') }}">
               <i class="bi bi-circle"></i><span>Company</span>
             </a>
-            <a href="{{ route('typehall') }}">
+            <a href="{{ route('halls') }}">
               <i class="bi bi-circle"></i><span>Halls</span>
             </a>
           </li>

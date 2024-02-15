@@ -33,6 +33,10 @@ Route::get('/typehall', function () {
     return view('typehall');
 })->name('typehall');
 
+Route::get('/halls', function () {
+    return view('halls');
+})->name('halls');
+
 
 // Routes for adding halls
 Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])->name('hall.add.form');

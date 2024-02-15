@@ -26,6 +26,8 @@ class HallController extends Controller
     }
 
     public function add(Request $request, $companyId){
+        Log::info('Request data:', $request->all());
+
         $request->validate([
             'hallname' => 'required|string',
             'halltype' => 'required|string',
@@ -49,6 +51,8 @@ class HallController extends Controller
             'hallprice' => $request->input('hallprice'),
             'hallstatus' => 'Available',
             'halltype' => $request->input('halltype'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
         ]);
 
         // Set boolean values based on checkboxes
@@ -95,8 +99,8 @@ class HallController extends Controller
             'hallprice' => 'required|numeric',
             'hallstatus' => 'Available',
             'halltype' => 'required|string|max:255',
-            'lightingsystem' => 'boolean|required|in:0,1',
-            'audiovisualsystem' => 'boolean|required|in:0,1',
+            'latitude' => 'required|float',
+            'longitude' => 'required|float',
         ]);
 
         // Set boolean values based on checkboxes
