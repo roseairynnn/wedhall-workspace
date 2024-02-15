@@ -100,17 +100,17 @@
                                         <div class="col-12">
                                             <label for="services" class="form-label">Services:</label>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input lightingsystem" type="checkbox" id="lightingsystem" {{ $hall->lightingsystem == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="lightingsystem" type="checkbox" id="lightingsystem" {{ $hall->lightingsystem == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="lightingsystem">Lighting System</label>
                                             </div>
                                         
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input audiovisualsystem" type="checkbox" id="audiovisualsystem" {{ $hall->audiovisualsystem == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="audiovisualsystem" type="checkbox" id="audiovisualsystem" {{ $hall->audiovisualsystem == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="audiovisualsystem">Audio Visual System</label>
                                             </div>
                                         
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input parkingfacilities" type="checkbox" id="parkingfacilities" {{ $hall->parkingfacilities == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="parkingfacilities" type="checkbox" id="parkingfacilities" {{ $hall->parkingfacilities == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="parkingfacilities">Parking Facilities</label>
                                             </div>
                                         </div>                                                                              

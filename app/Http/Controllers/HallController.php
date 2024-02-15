@@ -95,6 +95,8 @@ class HallController extends Controller
             'hallprice' => 'required|numeric',
             'hallstatus' => 'Available',
             'halltype' => 'required|string|max:255',
+            'lightingsystem' => 'boolean|required|in:0,1',
+            'audiovisualsystem' => 'boolean|required|in:0,1',
         ]);
 
         // Set boolean values based on checkboxes

@@ -22,7 +22,7 @@
               <i class="bi bi-circle"></i><span>Type of Hall</span>
             </a>
             <a href="#">
-              <i class="bi bi-circle"></i><span>Available Hall</span>
+              <i class=""></i><span></span>
             </a>
           </li>
           <!-- End Hall Nav -->
