@@ -33,11 +33,6 @@ Route::get('/typehall', function () {
     return view('typehall');
 })->name('typehall');
 
-Route::get('/halls', function () {
-    return view('halls');
-})->name('halls');
-
-
 // Routes for adding halls
 Route::get('/company/{id}/add-hall', [HallController::class, 'showAddForm'])->name('hall.add.form');
 Route::post('/company/{id}/add-hall', [HallController::class, 'add'])->name('hall.add');
@@ -52,6 +47,7 @@ Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])-
 
 //Hall Route
 Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('typehall-customer');
+Route::get('/halls', [HallController::class, 'showallHalls'])->name('halls');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
 Route::post('/update-hall/{hallid}', [HallController::class, 'updateHall'])->name('update.hall');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');

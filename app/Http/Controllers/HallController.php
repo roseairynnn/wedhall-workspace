@@ -20,6 +20,11 @@ class HallController extends Controller
         return view('typehall', ['hall' => $hall]);
     }
 
+    public function showallHalls(){
+        $halls = Hall::all();
+        return view('halls', ['halls' => $halls]);
+    }   
+
     public function showAddForm($companyId){
         $company = Company::findOrFail($companyId);
         return view('halls.add', ['companyId' => $companyId, 'company' => $company]);
@@ -77,6 +82,19 @@ class HallController extends Controller
 
         return redirect()->route('company-details', ['companyid' => $companyId])
             ->with('success', 'Hall added successfully');
+        }
+    
+    /* handle display hall based on halltype, hall capacity, 
+    and location, and it will display location using 
+    google map by stored (longitude and latitude) 
+    and reservationstartdate and reservationenddate */
+    public function displayfilteredHalls(Request $request){
+        $halls = Hall::where('halltype', $request->input('halltype'))
+            ->where('hallcapacity', '>=', $request->input('hallcapacity'))
+            ->where('hallcity', $request->input('hallcity'))
+            ->where('hallstatus', 'Available')
+            ->get();
+        return view('typehall-customer', ['halls' => $halls]);
     }
 
     public function updateHall(Request $request, $hallid){

@@ -73,7 +73,7 @@
             
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Available Hall</h5>
+                    <h5 class="card-title">Find Hall</h5>
   
                     <!-- General Form Elements -->
                     <form>
