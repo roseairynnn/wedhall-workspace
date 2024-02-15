@@ -31,8 +31,20 @@ class ReservationController extends Controller
             'reservationstatus' => 'required|string|max:255',
             // Add other validation rules as needed
         ]);*/
+
         $user = auth()->user();
         $hall = Hall::findOrFail($hallid);
+
+        //Check if the hall is available for the selected dates
+        $existedreservation = Reservation::where('hallid', $hallid)
+            ->where('reservationstartdate', '<=', $request->input('reservationenddate'))
+            ->where('reservationenddate', '>=', $request->input('reservationstartdate'))
+            ->first();
+
+        if ($existedreservation) {
+            return redirect()->back()->with('error', 'The hall is not available for the selected dates');
+        }
+
         // Create a new Reservation instance
         $reservation = new Reservation([
             'hallid' => $hallid,

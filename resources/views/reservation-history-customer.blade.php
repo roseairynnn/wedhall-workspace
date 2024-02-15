@@ -49,6 +49,22 @@
 
         <!-- Start Content -->
         <section class="section">
+            <!-- Alert Section -->
+            @if (session('success'))
+                <div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            @elseif (session('error'))
+                <div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-octagon me-1"></i>
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            @endif
+            <!-- End Alert Section -->
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
@@ -101,5 +117,17 @@
 
     <!--footer & link url js-->
     @include('components.footer')
+
+    <script>
+        // Dismiss the success alert after 3 seconds
+        function dismissAlert() {
+            $('#successAlert, #errorAlert').alert('close');
+        }
+
+        $(document).ready(function() {
+            setTimeout(dismissAlert, 3000);
+        });
+        
+    </script>   
 </body>
 </html>

@@ -122,6 +122,8 @@ class HallController extends Controller
         return redirect()->route('typehall',['hallid' => $hallid] )->with('success', 'Hall details updated successfully');
     }
 
+    
+
     public function delete($hallid) {
         Hall::find($hallid)->delete();
     

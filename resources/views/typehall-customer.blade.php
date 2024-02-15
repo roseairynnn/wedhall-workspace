@@ -57,6 +57,20 @@
 
         <!-- Start Content -->
         <section>
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                    {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @elseif (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-octagon me-1"></i>
+                    {{session('error')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Available Hall</h5>
@@ -115,7 +129,6 @@
                 @foreach($halls as $hall)
                 <div style="margin-bottom: 40px" class="col-lg-6">
                 <!-- Start Display Hall -->
-                    
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $hall->hallname }}</h5>
@@ -257,7 +270,7 @@
                             </div>
                             <!-- End Display Hall Details -->
 
-                            <!-- Vertically centered Modal Register Hall-->
+                            <!-- Vertically centered Modal Reserve Hall-->
                             <div class="modal fade" id="verticalycentered-reservehall" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -333,7 +346,7 @@
                                             <button type="submit" class="btn btn-dark" name="submit">Proceed</button>
                                         </div>
                                     </form>
-                                    <!-- End Register Hall Form -->
+                                    <!-- End Reserve Hall Form -->
                                     </div>
                                     
                                 </div>
@@ -348,7 +361,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 <!-- End Display Hall -->
                 </div>
                 @endforeach
