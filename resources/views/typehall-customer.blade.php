@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="halltype" class="col-sm-2 col-form-label">Capacity</label>
+                                <label for="halltype" class="col-sm-2 col-form-label">Hall Type</label>
                                 <div class="col-sm-10">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected="">Select Hall Type</option>
