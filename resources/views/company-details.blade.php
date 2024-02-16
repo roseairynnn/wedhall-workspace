@@ -126,7 +126,7 @@
                                             <button type="submit" class="btn btn-primary" name="submit">Update</button>
                                         </div>
                                     </form>
-                                    <!-- End Register Hall Form -->
+                                    <!-- End Update Company Form -->
 
                                     </div>
                                 </div>

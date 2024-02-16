@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Wedding Hall</title>
+    <title>About Us | Wedding Hall</title>
 
     <!--link url head-->
     @include('components.head')

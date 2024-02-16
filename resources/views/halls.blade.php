@@ -269,12 +269,6 @@
                                 </div>
                             </div>
                             <!-- End Display Hall Details -->
-                            
-                            <div class="card-content">                    
-                                <button type="button" id="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered-reservehall">
-                                    Edit Hall
-                                </button>
-                            </div>
                         </div>
                     </div>
                 <!-- End Display Hall -->

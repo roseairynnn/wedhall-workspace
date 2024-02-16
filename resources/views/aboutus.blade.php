@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Wedding Hall</title>
+    <title>About Us | Wedding Hall</title>
 
     <!--link url head-->
     @include('components.head')
@@ -23,7 +23,7 @@
           @include('components.nav-customer')
       @endif
     </div>
-    
+
     <!--main-->
     <main id="main" class="main">
 
@@ -31,7 +31,7 @@
             <h1 id="dashboard" >About Us</h1>
             <nav>
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('home-customer')}}">Home</a></li>
                 <li class="breadcrumb-item active"><a href="#dashboard">About Us</a></li>
                 </ol>
             </nav>
@@ -47,21 +47,21 @@
                     <div class="info-box card">
                       <i class="bi bi-geo-alt"></i>
                       <h3>Address</h3>
-                      <p>A108 Adam Street,<br>New York, NY 535022</p>
+                      <p>No 8 & 10 Jalan Opera L U2/L, TTDI Jaya, Seksyen U2 40150 Shah Alam Selangor</p>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="info-box card">
                       <i class="bi bi-telephone"></i>
                       <h3>Call Us</h3>
-                      <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                      <p>03 5589 5488 55<br>+60 1678 4451</p>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="info-box card">
                       <i class="bi bi-envelope"></i>
                       <h3>Email Us</h3>
-                      <p>info@example.com<br>contact@example.com</p>
+                      <p>custservice@wedhall.com<br>admin@wedhall.com</p>
                     </div>
                   </div>
                   <div class="col-lg-6">

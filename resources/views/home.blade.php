@@ -71,8 +71,8 @@
                             <i class="bi bi-cart"></i>
                           </div>
                           <div class="ps-3">
-                            <h6>-</h6>
-                            <span class="text-success small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
+                            <h6>8</h6>
+                            <span class="text-success small pt-1 fw-bold">3%</span> <span class="text-muted small pt-2 ps-1">increase</span>
       
                           </div>
                         </div>
@@ -106,8 +106,8 @@
                             <i class="bi bi-currency-dollar"></i>
                           </div>
                           <div class="ps-3">
-                            <h6>$-</h6>
-                            <span class="text-success small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
+                            <h6>RM12,100</h6>
+                            <span class="text-success small pt-1 fw-bold">3%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
       
                           </div>
                         </div>
@@ -142,8 +142,8 @@
                             <i class="bi bi-people"></i>
                           </div>
                           <div class="ps-3">
-                            <h6>-</h6>
-                            <span class="text-danger small pt-1 fw-bold">-%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
+                            <h6>4</h6>
+                            <span class="text-danger small pt-1 fw-bold">3%</span> <span class="text-muted small pt-2 ps-1">increase/decrease</span>
                           </div>
                         </div>
                       </div>

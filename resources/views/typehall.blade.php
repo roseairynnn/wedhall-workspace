@@ -69,7 +69,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    <!-- Update Update Form -->
+                                    <!-- Update Hall Form -->
                                     <form class="row g-3" method="POST" action="{{ route('update.hall', ['hallid' => $hall->hallid]) }}" enctype="multipart/form-data"> 
                                         @csrf
                                         <div class="col-12">
@@ -100,17 +100,17 @@
                                         <div class="col-12">
                                             <label for="services" class="form-label">Services:</label>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" name="lightingsystem" type="checkbox" id="lightingsystem" {{ $hall->lightingsystem == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="lightingsystem" type="checkbox" id="lightingsystem" value="1" {{ $hall->lightingsystem == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="lightingsystem">Lighting System</label>
                                             </div>
                                         
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" name="audiovisualsystem" type="checkbox" id="audiovisualsystem" {{ $hall->audiovisualsystem == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="audiovisualsystem" type="checkbox" id="audiovisualsystem" value="1" {{ $hall->audiovisualsystem == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="audiovisualsystem">Audio Visual System</label>
                                             </div>
                                         
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" name="parkingfacilities" type="checkbox" id="parkingfacilities" {{ $hall->parkingfacilities == 1 ? 'checked' : '' }}>
+                                                <input class="form-check-input" name="parkingfacilities" type="checkbox" id="parkingfacilities" value="1" {{ $hall->parkingfacilities == 1 ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="parkingfacilities">Parking Facilities</label>
                                             </div>
                                         </div>                                                                              
@@ -132,6 +132,17 @@
                                             <input class="form-control" type="file" id="hallimage2" name="hallimage2" style="margin-bottom: 10px;">
                                             <input class="form-control" type="file" id="hallimage3" name="hallimage3" style="margin-bottom: 10px;">
                                         </div>
+
+                                        <!--Latitude & Longitude-->
+                                        <div class="col-md-6">
+                                            <label for="latitude" class="form-label">Latitude</label>
+                                            <input type="text" class="form-control" id="latitude" name="latitude" value="{{$hall->latitude}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="longitude" class="form-label">Longitude</label>
+                                            <input type="text" class="form-control" id="longitude" name="longitude" value="{{$hall->longitude}}">
+                                        </div>
+
                                         <!--Address-->
                                         <div class="col-12">
                                             <label for="halladdress" class="form-label">Address</label>

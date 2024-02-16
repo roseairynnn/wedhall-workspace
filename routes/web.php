@@ -50,7 +50,7 @@ Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('ty
 Route::get('/halls', [HallController::class, 'showallHalls'])->name('halls');
 Route::post('/typehall-customer', [HallController::class, 'displayfilteredHalls'])->name('halls.filter');
 Route::get('/typehall/{hallid}', [HallController::class, 'showHallsDetails'])->name('hall.details');
-Route::post('/update-hall/{hallid}', [HallController::class, 'updateHall'])->name('update.hall');
+Route::post('/typehall/{hallid}', [HallController::class, 'updateHall'])->name('update.hall');
 Route::get('/hall/delete/{hallid}', [HallController::class, 'delete'])->name('hall.delete');
 
 //Add Reservation Route

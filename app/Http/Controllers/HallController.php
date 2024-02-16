@@ -107,7 +107,7 @@ class HallController extends Controller
         // Find the hall
         $hall = Hall::findOrFail($hallid);
         
-        $request->validate([
+        /*$request->validate([
             'hallimage1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'hallimage2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'hallimage3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -121,14 +121,15 @@ class HallController extends Controller
             'hallprice' => 'required|numeric',
             'hallstatus' => 'Available',
             'halltype' => 'required|string|max:255',
-            'latitude' => 'required|float',
-            'longitude' => 'required|float',
-        ]);
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
+        ]);*/
 
         // Set boolean values based on checkboxes
-        $hall->lightingsystem = $request->has('lightingsystem');
-        $hall->audiovisualsystem = $request->has('audiovisualsystem');
-        $hall->parkingfacilities = $request->has('parkingfacilities');
+        $hall->lightingsystem = $request->has('lightingsystem') ? 1 : 0;
+        $hall->audiovisualsystem = $request->has('audiovisualsystem') ? 1 : 0;
+        $hall->parkingfacilities = $request->has('parkingfacilities') ? 1 : 0;
+
 
         //handle file uploads for hallimage1, hallimage2, and hallimage3
         foreach (['hallimage1', 'hallimage2', 'hallimage3'] as $imageField) {
@@ -145,7 +146,8 @@ class HallController extends Controller
         // Update the hall record
         $hall->update($request->all());
 
-        return redirect()->route('typehall',['hallid' => $hallid] )->with('success', 'Hall details updated successfully');
+        return view('typehall', ['hall' => $hall])
+        ->with('success', 'Hall details updated successfully');
     }
 
     
