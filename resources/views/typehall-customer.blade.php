@@ -8,6 +8,31 @@
     <!--link url head-->
     @include('components.head')
 
+    <!--Maps API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR_lb-NWfIlp5SWipO5laE8D4xLHwZgtY"></script>
+    <script>
+        function initializeMap() {
+            var halls = @json($halls); // Convert PHP array to JavaScript array
+            if (halls.length > 0) { // Check if there are halls available
+                var mapOptions = {
+                    center: { lat: parseFloat(halls[0].latitude), lng: parseFloat(halls[0].longitude) }, // Set center to the first hall's location
+                    zoom: 10 // Default zoom
+                };
+                var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+                // Loop through each hall and add a marker
+                halls.forEach(function(hall) {
+                    var marker = new google.maps.Marker({
+                        position: { lat: parseFloat(hall.latitude), lng: parseFloat(hall.longitude) },
+                        map: map,
+                        title: hall.hallname
+                    });
+                });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initializeMap);
+    </script>
+
     <style>
         #add-hall{
             margin: 0;
@@ -70,13 +95,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            
+
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Available Hall</h5>
   
                     <!-- General Form Elements -->
-                    <form>
+                    <form action="{{ route('halls.filter')}}" method="POST" >
                         <div class="row mb-3">
                             <label for="location" class="col-sm-2 col-form-label">Where</label>
                             <div class="col-sm-10">
@@ -121,9 +146,17 @@
                     <!-- End General Form Elements -->
                 </div>
             </div>
+
+            <!--Display marked maps of the location of the hall based on the search criteria and latitude and longitude coordinates.-->
+            <div style="margin-top: 50px;" class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Location</h5>
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                </div>
+            </div>
           
-          <br>
-          <br>
+            <br>
+            <br>
 
             <div class="row">
                 @foreach($halls as $hall)

@@ -88,14 +88,18 @@ class HallController extends Controller
     and location, and it will display location using 
     google map by stored (longitude and latitude) 
     and reservationstartdate and reservationenddate */
+
     public function displayfilteredHalls(Request $request){
         $halls = Hall::where('halltype', $request->input('halltype'))
             ->where('hallcapacity', '>=', $request->input('hallcapacity'))
             ->where('hallcity', $request->input('hallcity'))
             ->where('hallstatus', 'Available')
+            ->whereNotNull('latitude') // Filter out halls with null latitude
+            ->whereNotNull('longitude') // Filter out halls with null longitude
             ->get();
         return view('typehall-customer', ['halls' => $halls]);
     }
+    
 
     public function updateHall(Request $request, $hallid){
         Log::info('POST data:', $request->all());

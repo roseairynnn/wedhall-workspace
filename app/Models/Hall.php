@@ -32,8 +32,7 @@ class Hall extends Model
     ];
 
     // Define relationships
-    public function company()
-    {
+    public function company(){
         return $this->belongsTo(Company::class, 'companyid');
     }
 
