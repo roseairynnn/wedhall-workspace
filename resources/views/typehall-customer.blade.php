@@ -165,6 +165,90 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $hall->hallname }}</h5>
+
+                            <!-- Vertically centered Modal Reserve Hall-->
+                            <div class="modal fade" id="verticalycentered-reservehall{{$hall->hallid}}" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title">Reserve {{$hall->hallname}} </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <!-- Register Hall Form -->
+                                    <form class="row g-3" method="POST" action="{{ route('reservation.add', ['hallid' => $hall->hallid]) }}" enctype="multipart/form-data"> 
+                                        @csrf
+                                        <div class="col-12">
+                                            <label for="fullname" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname" value="{{ auth()->user()->fullname }}" readonly>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="phone" class="form-label">Phone</label>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="{{ auth()->user()->phone }}" readonly>
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label for="hallname" class="form-label">Hall Name</label>
+                                            <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" readonly>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="halltype" class="form-label">Hall Type</label>
+                                            <input type="text" class="form-control" id="halltype" name="halltype" value="{{$hall->halltype}}" readonly>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="hallcapacity" class="form-label">Capacity</label>
+                                            <div class="input-group mb-3">                                            
+                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="{{$hall->hallcapacity}}" readonly>
+                                            <span class="input-group-text">Pax</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="reservationstartdate" class="form-label">Date (Start)</label>       
+                                            <input type="date" class="form-control" aria-label="Start Date of Reservation" name="reservationstartdate" id="reservationstartdate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="reservationenddate" class="form-label">Date (End)</label>       
+                                            <input type="date" class="form-control" aria-label="End Date of Reservation" name="reservationenddate" id="reservationenddate" value="" required>                                               
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label for="hallprice" class="form-label">Price Range (Day)</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="{{$hall->hallprice}}" readonly>
+                                                <span class="input-group-text">.00</span>
+                                            </div>  
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="reservationdays" class="form-label"><font color="red">*</font></label>       
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" readonly>
+                                                <span class="input-group-text">Days</span> 
+                                            </div>  
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="reservationamount" class="form-label">Amount</label>       
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">RM</span>
+                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" readonly>
+                                            </div>  
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                                            <button type="submit" class="btn btn-dark" name="submit">Proceed</button>
+                                        </div>
+                                    </form>
+                                    <!-- End Reserve Hall Form -->
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End Vertically centered Modal Register Hall-->
                             
                             <!-- Slides with indicators | Start Display Hall Images-->
                             <div class="card-content">
@@ -302,93 +386,9 @@
                                 </div>
                             </div>
                             <!-- End Display Hall Details -->
-
-                            <!-- Vertically centered Modal Reserve Hall-->
-                            <div class="modal fade" id="verticalycentered-reservehall" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title">Reserve {{$hall->hallname}} </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                    <!-- Register Hall Form -->
-                                    <form class="row g-3" method="POST" action="{{ route('reservation.add', ['hallid' => $hall->hallid]) }}" enctype="multipart/form-data"> 
-                                        @csrf
-                                        <div class="col-12">
-                                            <label for="fullname" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control" id="fullname" name="fullname" value="{{ auth()->user()->fullname }}" readonly>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone" name="phone" value="{{ auth()->user()->phone }}" readonly>
-                                        </div>
-                                        <hr>
-                                        <div class="col-12">
-                                            <label for="hallname" class="form-label">Hall Name</label>
-                                            <input type="text" class="form-control" id="hallname" name="hallname" value="{{$hall->hallname}}" readonly>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="halltype" class="form-label">Hall Type</label>
-                                            <input type="text" class="form-control" id="halltype" name="halltype" value="{{$hall->halltype}}" readonly>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="hallcapacity" class="form-label">Capacity</label>
-                                            <div class="input-group mb-3">                                            
-                                            <input type="number" class="form-control" id="hallcapacity" style="background-color: white;" name="hallcapacity" value="{{$hall->hallcapacity}}" readonly>
-                                            <span class="input-group-text">Pax</span>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="col-md-6 mb-2">
-                                            <label for="reservationstartdate" class="form-label">Date (Start)</label>       
-                                            <input type="date" class="form-control" aria-label="Start Date of Reservation" name="reservationstartdate" id="reservationstartdate" value="" required>                                               
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="reservationenddate" class="form-label">Date (End)</label>       
-                                            <input type="date" class="form-control" aria-label="End Date of Reservation" name="reservationenddate" id="reservationenddate" value="" required>                                               
-                                        </div>
-                                        <div class="col-md-8">
-                                            <label for="hallprice" class="form-label">Price Range (Day)</label>       
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" aria-label="Amount (to the nearest MYR)" name="hallprice" id="hallprice" value="{{$hall->hallprice}}" readonly>
-                                                <span class="input-group-text">.00</span>
-                                            </div>  
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="reservationdays" class="form-label"><font color="red">*</font></label>       
-                                            <div class="input-group mb-3">
-                                                <input type="text" class="form-control" style="background-color: white;" name="reservationdays" id="reservationdays" value="" readonly>
-                                                <span class="input-group-text">Days</span> 
-                                            </div>  
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="reservationamount" class="form-label">Amount</label>       
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">RM</span>
-                                                <input type="text" class="form-control" style="background-color: white;" name="reservationamount" id="reservationamount" value="" readonly>
-                                            </div>  
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                            <button type="submit" class="btn btn-dark" name="submit">Proceed</button>
-                                        </div>
-                                    </form>
-                                    <!-- End Reserve Hall Form -->
-                                    </div>
-                                    
-                                </div>
-                                </div>
-                            </div>
-                            <!-- End Vertically centered Modal Register Hall-->
                             
                             <div class="card-content">                    
-                                <button type="button" id="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered-reservehall">
+                                <button type="button" id="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered-reservehall{{$hall->hallid}}">
                                     Reserve Hall
                                 </button>
                             </div>
@@ -408,37 +408,42 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const startDateInput = document.getElementById('reservationstartdate');
-            const endDateInput = document.getElementById('reservationenddate');
-            const reservationDaysInput = document.getElementById('reservationdays');
-            const hallPriceInput = document.getElementById('hallprice');
-            const reservationAmountInput = document.getElementById('reservationamount');
-
-            function calculateDays() {
-                const startDate = new Date(startDateInput.value);
-                const endDate = new Date(endDateInput.value);
-                const timeDifference = Math.abs(endDate.getTime() - startDate.getTime());
-                const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-                reservationDaysInput.value = daysDifference;
-
-                calculateAmount(); // Call calculateAmount after updating reservationDays
-            }
-
-            function calculateAmount() {
-                const hallPrice = parseFloat(hallPriceInput.value);
-                const reservationDays = parseInt(reservationDaysInput.value);
-
-                if (!isNaN(hallPrice) && !isNaN(reservationDays)) {
-                    reservationAmountInput.value = (hallPrice * reservationDays).toFixed(2);
+            const modals = document.querySelectorAll('.modal.fade');
+            modals.forEach((modal) => {
+                const startDateInput = modal.querySelector('#reservationstartdate');
+                const endDateInput = modal.querySelector('#reservationenddate');
+                const reservationDaysInput = modal.querySelector('#reservationdays');
+                const hallPriceInput = modal.querySelector('#hallprice');
+                const reservationAmountInput = modal.querySelector('#reservationamount');
+    
+                function calculateDays() {
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+                    const timeDifference = Math.abs(endDate.getTime() - startDate.getTime());
+                    const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+                    reservationDaysInput.value = daysDifference;
+    
+                    calculateAmount(); // Call calculateAmount after updating reservationDays
                 }
-            }
-
-            startDateInput.addEventListener('change', calculateDays);
-            endDateInput.addEventListener('change', calculateDays);
-            hallPriceInput.addEventListener('change', calculateAmount);
-            reservationDaysInput.addEventListener('change', calculateAmount);
+    
+                function calculateAmount() {
+                    const hallPrice = parseFloat(hallPriceInput.value);
+                    const reservationDays = parseInt(reservationDaysInput.value);
+    
+                    if (!isNaN(hallPrice) && !isNaN(reservationDays)) {
+                        reservationAmountInput.value = (hallPrice * reservationDays).toFixed(2);
+                    }
+                }
+    
+                startDateInput.addEventListener('change', calculateDays);
+                endDateInput.addEventListener('change', calculateDays);
+                hallPriceInput.addEventListener('change', calculateAmount);
+                reservationDaysInput.addEventListener('change', calculateAmount);
+            });
         });
     </script>
+    
+    
 
     <!--footer & link url js-->
     @include('components.footer')
