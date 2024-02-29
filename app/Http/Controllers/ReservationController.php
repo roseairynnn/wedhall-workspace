@@ -19,19 +19,6 @@ class ReservationController extends Controller
         // Log the POST data from the form
         Log::info('Request data:', $request->all());
         Log::info('POST data: ', $request->all());
-
-        /*$request->validate([
-            'hallid' => 'required|string|max:255',
-            'id' => 'required|string|max:255',
-            'companyid' => 'required|string|max:255',
-            'reservationstartdate' => 'required|string|max:255',
-            'reservationenddate' => 'required|string|max:255',
-            'reservationamount' => 'required|string|max:255',
-            'reservationdays' => 'required|string|max:255',
-            'reservationstatus' => 'required|string|max:255',
-            // Add other validation rules as needed
-        ]);*/
-
         $user = auth()->user();
         $hall = Hall::findOrFail($hallid);
 
