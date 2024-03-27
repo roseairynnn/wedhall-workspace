@@ -45,6 +45,9 @@ Route::get('/company/{companyid}', [CompanyController::class, 'showCompanyDetail
 Route::post('/update-company/{companyid}', [CompanyController::class, 'updateCompany'])->name('update.company');
 Route::get('/company/delete/{companyid}', [CompanyController::class, 'delete'])->name('company.delete');
 
+//Routes for Staff
+Route::get('/staff', function () { return view('staff'); })->name('staff');
+
 //Hall Route
 Route::get('/typehall-customer', [HallController::class, 'showHalls'])->name('typehall-customer');
 Route::get('/halls', [HallController::class, 'showallHalls'])->name('halls');

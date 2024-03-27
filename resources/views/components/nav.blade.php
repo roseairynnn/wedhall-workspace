@@ -40,7 +40,7 @@
 
       <!--Add Staff Nav -->
       <li class="nav-item">
-          <a class="nav-link collapsed" href="">
+          <a class="nav-link collapsed" href="{{ route('staff')}}">
             <i class="bi bi-person"></i>
             <span>Staff</span>
           </a>
