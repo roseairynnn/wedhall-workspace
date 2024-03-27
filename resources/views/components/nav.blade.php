@@ -38,6 +38,15 @@
       </li>
       <!-- End Reservation History Nav -->
 
+      <!--Add Staff Nav -->
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="">
+            <i class="bi bi-person"></i>
+            <span>Staff</span>
+          </a>
+      </li>
+      <!-- End Staff Nav -->
+
       <li class="nav-item">
           <a class="nav-link collapsed" href="{{ route('aboutus') }}">
             <i class="bi bi-shop"></i>
